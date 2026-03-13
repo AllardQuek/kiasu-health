@@ -9,6 +9,14 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
+    // Ensure the bot is initialized before handling updates.
+    // Grammy needs bot info (ID, name, username) which it normally fetches via getMe().
+    // When using handleUpdate directly, we must ensure init() has been called at least once.
+    if (!bot.isInited()) {
+      console.log("[api/telegram] Bot not inited, calling bot.init()...");
+      await bot.init();
+    }
+
     // Use waitUntil to perform the heavy bot handling in the background.
     // This allows returning a 200 OK to Telegram immediately to prevent retries
     // while the bot/agent take 15+ seconds to process.
