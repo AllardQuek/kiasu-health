@@ -70,6 +70,73 @@ async function invokeAgent(
 // ── Public entry points ───────────────────────────────────────────────────────
 
 /**
+ * Streams the conversation with an agent using the Kibana Conversation API.
+ * Uses: POST {kibanaUrl}/api/agent_builder/agents/{agentId}/converse/async
+ */
+export async function* streamAgentConversation(
+  agentId: string | undefined,
+  text: string,
+  sessionId?: string
+): AsyncGenerator<string> {
+  const esUrl = process.env.ELASTICSEARCH_URL;
+  const apiKey = process.env.ELASTICSEARCH_API_KEY;
+
+  if (!esUrl || !apiKey || !agentId) {
+    console.warn(`[agent] Stream skipped: env missing (ELASTICSEARCH_URL=${!!esUrl}, API_KEY=${!!apiKey}, AGENT_ID=${!!agentId})`);
+    yield "Alamak, I'm missing some API keys or Agent IDs. Check your .env setup!";
+    return;
+  }
+
+  const kibanaUrl = esUrl.replace(".es.", ".kb.");
+  const url = `${kibanaUrl}/api/agent_builder/agents/${agentId}/converse/async`;
+
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `ApiKey ${apiKey}`,
+        "kbn-xsrf": "true",
+      },
+      body: JSON.stringify({
+        input: { text },
+        session_id: sessionId,
+        stream: true,
+      }),
+    });
+
+    if (!res.ok) throw new Error(`Agent stream failed: ${res.status}`);
+
+    const reader = res.body?.getReader();
+    if (!reader) throw new Error("ReadableStream not supported");
+
+    const decoder = new TextDecoder();
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      const chunk = decoder.decode(value, { stream: true });
+      const lines = chunk.split("\n");
+
+      for (const line of lines) {
+        if (!line.trim() || !line.startsWith("data: ")) continue;
+        try {
+          const data = JSON.parse(line.slice(6));
+          // Elastic Agent Builder stream format: { delta: "..." } or { text: "..." }
+          if (data.delta) yield data.delta;
+          else if (data.text) yield data.text;
+        } catch (e) {
+          // Ignore parse errors for metadata/headers
+        }
+      }
+    }
+  } catch (err) {
+    console.error("[agent] Stream failed:", err);
+    yield "Sorry, my brain is a bit laggy right now. Try again later?";
+  }
+}
+
+/**
  * HealthCoachAgent — personal meal analysis + coaching.
  * When photo_url is provided: A2A → MealAnalyzerAgent (Bedrock) for vision analysis.
  * Always: A2A → DataAggregatorAgent for trend context.

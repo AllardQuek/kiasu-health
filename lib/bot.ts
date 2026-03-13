@@ -6,7 +6,7 @@
 //   Group (social):    /reveal → calls KiasuRefereeAgent, posts standings text + web link
 
 import { Bot } from "grammy";
-import { callHealthCoachAgent, callRefereeAgent } from "./agent";
+import { callHealthCoachAgent, callRefereeAgent, streamAgentConversation } from "./agent";
 import { getPlayerByTelegramId, upsertPlayer, getLeagueByJoinCode } from "./elastic";
 import { MOCK_STANDINGS } from "./mock";
 
@@ -142,22 +142,55 @@ bot.command("ask", async (ctx) => {
     return;
   }
 
+  const query = ctx.match?.trim();
+  if (!query) {
+    await ctx.reply(
+      "Eh, what you want to ask? Just type `/ask <your question>` lah!\n\n" +
+      "_Example: /ask am I on track for my step goal?_",
+      { parse_mode: "Markdown" }
+    );
+    return;
+  }
+
   const telegramId = ctx.from?.id?.toString() ?? "unknown";
-  const leagueId = process.env.DEFAULT_LEAGUE_ID ?? "sg-league-001";
 
-  await ctx.reply("🧠 Checking your trends...");
+  // Use the HealthCoachAgent ID for general health queries (which leverages DataAggregatorAgent)
+  const agentId = process.env.HEALTH_COACH_AGENT_ID;
 
-  // HealthCoachAgent without photo_url → A2A DataAggregatorAgent for trend context → coaching advice
-  const result = await callHealthCoachAgent({
-    player_id: telegramId,
-    league_id: leagueId,
-  });
+  // Placeholder message we will update or follow up on
+  const msg = await ctx.reply("🧠 Thinking...");
 
-  const reply =
-    result.message ??
-    "Keep pushing! Log a meal with /photo and I'll give you more specific advice.";
+  try {
+    let fullText = "";
+    // Note: Vercel serverless has a timeout (10-30s).
+    // telegram.api.editMessageText allows us to "simulate" streaming by updating the message chunks.
+    // However, fast updates can trigger Telegram rate limits.
+    // For the hackathon, we'll collect the stream and update in chunks or once at the end if it's fast.
 
-  await ctx.reply(reply, { parse_mode: "Markdown" });
+    const stream = streamAgentConversation(agentId, query, `tg_${telegramId}`);
+    let chunkCount = 0;
+
+    for await (const delta of stream) {
+      fullText += delta;
+      chunkCount++;
+
+      // Update every 10 chunks to avoid hitting Telegram rate limits too hard
+      if (chunkCount % 10 === 0) {
+        try {
+          await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText || "Thinking...");
+        } catch (e) { /* ignore rate limit errors */ }
+      }
+    }
+
+    if (fullText) {
+      await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText, { parse_mode: "Markdown" });
+    } else {
+      await ctx.api.editMessageText(ctx.chat.id, msg.message_id, "Alamak, the agent didn't say anything. Try asking again?");
+    }
+  } catch (err) {
+    console.error("[bot] /ask error:", err);
+    await ctx.api.editMessageText(ctx.chat.id, msg.message_id, "Sorry, I'm having trouble connecting to my health coach brain right now. 🫠");
+  }
 });
 
 // ── /reveal (group) ────────────────────────────────────────────────────────
