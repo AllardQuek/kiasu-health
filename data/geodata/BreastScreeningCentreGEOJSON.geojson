@@ -1,0 +1,581 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "BREASTSCREEN",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.84560835649081, 1.3743114830439676 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3863,
+				"ADDRESSBLOCKHOUSENUMBER" : "21",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "569666",
+				"ADDRESSSTREETNAME" : "Ang Mo Kio Central 2",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-amk.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Ang Mo Kio Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "E0BD8F986CD866E0",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.95920469728927, 1.3685869467919396 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3843,
+				"ADDRESSBLOCKHOUSENUMBER" : "1",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : "1",
+				"ADDRESSPOSTALCODE" : "519457",
+				"ADDRESSSTREETNAME" : "Pasir Ris Drive 4",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://polyclinic.singhealth.com.sg/patient-care/Pages/SHP-Pasir-Ris.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Pasir Ris Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "18CE85BA49FFF890",
+				"FMEL_UPD_D" : "20250529132637",
+				"ADDRESSUNITNUMBER" : "11"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.91319574883552, 1.4028784531949312 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3844,
+				"ADDRESSBLOCKHOUSENUMBER" : "681",
+				"ADDRESSBUILDINGNAME" : "Oasis Terraces",
+				"ADDRESSFLOORNUMBER" : "2",
+				"ADDRESSPOSTALCODE" : "820681",
+				"ADDRESSSTREETNAME" : "Punggol Drive",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://polyclinic.singhealth.com.sg/patient-care/Pages/shp-punggol.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Punggol Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "467A8B209115FDC7",
+				"FMEL_UPD_D" : "20250529132637",
+				"ADDRESSUNITNUMBER" : "1"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.82276363764352, 1.4482633618766256 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3845,
+				"ADDRESSBLOCKHOUSENUMBER" : "21",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : "1",
+				"ADDRESSPOSTALCODE" : "756973",
+				"ADDRESSSTREETNAME" : "Canberra Link",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-sembawang.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Sembawang Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "87E1198E4588D455",
+				"FMEL_UPD_D" : "20250529132637",
+				"ADDRESSUNITNUMBER" : "3"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.93162062157725, 1.3269849884844858 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3846,
+				"ADDRESSBLOCKHOUSENUMBER" : "11",
+				"ADDRESSBUILDINGNAME" : "Heartbeat@Bedok",
+				"ADDRESSFLOORNUMBER" : "2",
+				"ADDRESSPOSTALCODE" : "469662",
+				"ADDRESSSTREETNAME" : "Bedok North Street 1",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://polyclinic.singhealth.com.sg/patient-care/Pages/shp-bedok.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Bedok Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "E6D5FB693A06EBB8",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : "1"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.74782227017751, 1.352015174812025 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3847,
+				"ADDRESSBLOCKHOUSENUMBER" : "50",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "659164",
+				"ADDRESSSTREETNAME" : "Bukit Batok West Avenue 3",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nup.com.sg/Pages/Our%20Clinics/our-clinics-bbp.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Bukit Batok Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "6FF488E0E9C9FBC2",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.75077687240429, 1.3823413857127425 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3848,
+				"ADDRESSBLOCKHOUSENUMBER" : "2",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "688846",
+				"ADDRESSSTREETNAME" : "Teck Whye Crescent",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nup.com.sg/Pages/Our%20Clinics/our-clinics-cckp.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Choa Chu Kang Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "4BB4062FFAF43E95",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.76547650435839, 1.3124810823684312 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3849,
+				"ADDRESSBLOCKHOUSENUMBER" : "451",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : "2",
+				"ADDRESSPOSTALCODE" : "120451",
+				"ADDRESSSTREETNAME" : "Clementi Avenue 3",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nup.com.sg/Pages/Our%20Clinics/our-clinics-clemp.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Clementi Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "D5E15CC554D2AAA9",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : "307"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.88716604481574, 1.3194936457037207 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3850,
+				"ADDRESSBLOCKHOUSENUMBER" : "21",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "389707",
+				"ADDRESSSTREETNAME" : "Geylang East Central",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-geylang.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Geylang Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "BBEB75BF9867A2ED",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.88899639048948, 1.3700180468290737 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3851,
+				"ADDRESSBLOCKHOUSENUMBER" : "89",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "538829",
+				"ADDRESSSTREETNAME" : "Hougang Avenue 4",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-hougang.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Hougang Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "BA090CA53DB33463",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.8586873260051, 1.3166930224324112 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3852,
+				"ADDRESSBLOCKHOUSENUMBER" : "701",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "328263",
+				"ADDRESSSTREETNAME" : "Serangoon Road",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-kallang.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Kallang Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "7FA6D605AA2000BC",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.83831505402756, 1.2793314591479037 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3853,
+				"ADDRESSBLOCKHOUSENUMBER" : "3",
+				"ADDRESSBUILDINGNAME" : "Health Promotion Board Building",
+				"ADDRESSFLOORNUMBER" : "2",
+				"ADDRESSPOSTALCODE" : "168937",
+				"ADDRESSSTREETNAME" : "Second Hospital Avenue",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://polyclinic.singhealth.com.sg/patient-care/Pages/SHP-Outram.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Outram Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "4FCD7B8BF411698D",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : "0"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.8484300826872, 1.3501724268530226 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3854,
+				"ADDRESSBLOCKHOUSENUMBER" : "9",
+				"ADDRESSBUILDINGNAME" : "Junction 8 Office Tower",
+				"ADDRESSFLOORNUMBER" : "6",
+				"ADDRESSPOSTALCODE" : "579837",
+				"ADDRESSSTREETNAME" : "Bishan Place",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.singaporecancersociety.org.sg/contact.html",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "SCS Multi-Service Centre",
+				"PHOTOURL" : null,
+				"INC_CRC" : "403FCEA37ACB6861",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : "5"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.89390610277434, 1.392785585870242 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3855,
+				"ADDRESSBLOCKHOUSENUMBER" : "2",
+				"ADDRESSBUILDINGNAME" : "Sengkang Community Hub",
+				"ADDRESSFLOORNUMBER" : "1",
+				"ADDRESSPOSTALCODE" : "545025",
+				"ADDRESSSTREETNAME" : "Sengkang Square",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://polyclinic.singhealth.com.sg/patient-care/Pages/shp-sengkang.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "SengKang Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "EEB6F7D1D693BFA4",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : "6"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.94584946666237, 1.3573099581749626 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3856,
+				"ADDRESSBLOCKHOUSENUMBER" : "1",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "529203",
+				"ADDRESSSTREETNAME" : "Tampines Street 41",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://polyclinic.singhealth.com.sg/patient-care/Pages/shp-tampines.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Tampines Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "836CDAE5EB70ABBF",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.85895644511542, 1.3344802763996426 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3857,
+				"ADDRESSBLOCKHOUSENUMBER" : "2003",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "319260",
+				"ADDRESSSTREETNAME" : "Toa Payoh Lorong 8",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-ToaPayoh.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Toa Payoh Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "5F4733093B350B7B",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.77521291746736, 1.4308932241216819 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3858,
+				"ADDRESSBLOCKHOUSENUMBER" : "10",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "738579",
+				"ADDRESSSTREETNAME" : "Woodlands Street 31",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-woodlands.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Woodlands Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "BC840D2576F838D1",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.83919070033672, 1.4303585107550705 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3859,
+				"ADDRESSBLOCKHOUSENUMBER" : "2",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "768898",
+				"ADDRESSSTREETNAME" : "Yishun Ave 9",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-yishun.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Yishun Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "6A0E6330218AC36B",
+				"FMEL_UPD_D" : "20230811145431",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.69897934147608, 1.3385622426293666 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3860,
+				"ADDRESSBLOCKHOUSENUMBER" : "26",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "648201",
+				"ADDRESSSTREETNAME" : "Jurong West Street 61",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nup.com.sg/Pages/Our%20Clinics/our-clinics-pioneerp.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Pioneer Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "9C1E0B57E7C14796",
+				"FMEL_UPD_D" : "20200212163919",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.83434643909712, 1.418250783374553 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3861,
+				"ADDRESSBLOCKHOUSENUMBER" : "690",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "769567",
+				"ADDRESSSTREETNAME" : "Yishun Ring Roadd",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nhgp.com.sg/our-polyclinics/all-polyclinics/Pages/polyclinic-khatib.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Khatib Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "40688B7278953BAD",
+				"FMEL_UPD_D" : "20240723143851",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.93755631803462, 1.3633110636349612 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3862,
+				"ADDRESSBLOCKHOUSENUMBER" : "35",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "528566",
+				"ADDRESSSTREETNAME" : "Tampines Street 61",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://polyclinic.singhealth.com.sg/patient-care/our-polyclinics/shp-tampines-north",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Tampines North Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "04CFC7A067D5D7BB",
+				"FMEL_UPD_D" : "20240723143851",
+				"ADDRESSUNITNUMBER" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.76016645293414, 1.3827125369840436 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3841,
+				"ADDRESSBLOCKHOUSENUMBER" : "50",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : "3",
+				"ADDRESSPOSTALCODE" : "677726",
+				"ADDRESSSTREETNAME" : "Woodlands Road",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://www.nup.com.sg/Pages/Our%20Clinics/our-clinics-bpj.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Bukit Panjang Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "E06B9CFC4B0D779B",
+				"FMEL_UPD_D" : "20250529132637",
+				"ADDRESSUNITNUMBER" : "2"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 103.90571066893415, 1.3173277271261974 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3842,
+				"ADDRESSBLOCKHOUSENUMBER" : "1",
+				"ADDRESSBUILDINGNAME" : null,
+				"ADDRESSFLOORNUMBER" : null,
+				"ADDRESSPOSTALCODE" : "429400",
+				"ADDRESSSTREETNAME" : "Chin Cheng Ave",
+				"ADDRESSTYPE" : null,
+				"DESCRIPTION" : "Breast Screening service is available here.",
+				"HYPERLINK" : "https://polyclinic.singhealth.com.sg/patient-care/our-polyclinics/Pages/shp-eunos.aspx",
+				"LANDXADDRESSPOINT" : null,
+				"LANDYADDRESSPOINT" : null,
+				"NAME" : "Eunos Polyclinic",
+				"PHOTOURL" : null,
+				"INC_CRC" : "984C61D9CC254B22",
+				"FMEL_UPD_D" : "20250529132637",
+				"ADDRESSUNITNUMBER" : null
+			}
+		}
+	]
+}
