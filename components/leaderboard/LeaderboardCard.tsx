@@ -71,7 +71,7 @@ export function LeaderboardCard({ entry, maxScore, isReveal = false }: Leaderboa
                 )}
                 title={`Pioneer Bonus: ${entry.age_multiplier}x multiplier applied for ages 40+`}
               >
-                {entry.age_multiplier}x Pioneer
+                Pioneer Bonus
               </span>
             )}
           </div>
