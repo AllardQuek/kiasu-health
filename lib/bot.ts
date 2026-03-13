@@ -18,8 +18,29 @@ export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN ?? "placeholder", {
   client: {
     apiRoot: "https://api.telegram.org",
     // @ts-ignore - grammy 1.x ApiClientOptions timeout property
-    timeout: 60000, 
+    timeout: 180000, 
   },
+});
+
+// Middleware to prevent concurrent processing for the same chat
+// This prevents race conditions where the agent is called multiple times for one user
+const chatProcessing = new Set<number>();
+
+bot.use(async (ctx, next) => {
+  const chatId = ctx.chat?.id;
+  if (!chatId) return next();
+
+  if (chatProcessing.has(chatId)) {
+    console.log(`[bot] Skipping concurrent update for chat ${chatId}`);
+    return;
+  }
+
+  chatProcessing.add(chatId);
+  try {
+    await next();
+  } finally {
+    chatProcessing.delete(chatId);
+  }
 });
 
 // ── /start ──────────────────────────────────────────────────────────────
@@ -178,16 +199,25 @@ bot.command("ask", async (ctx) => {
     let lastUpdateAt = Date.now();
 
     for await (const delta of stream) {
+      if (!delta) continue;
       fullText += delta;
       chunkCount++;
 
-      // Update every 10 chunks AND at least once every 1s to satisfy Telegram + Vercel
+      // Update every 20 chunks AND at least once every 1s to satisfy Telegram + Vercel
+      // Increased to 20 to reduce Telegram API calls and avoid potential congestion
       const now = Date.now();
-      if (chunkCount % 10 === 0 || (now - lastUpdateAt > 1000 && delta.trim())) {
+      if (chunkCount % 20 === 0 || (now - lastUpdateAt > 2500 && delta.trim())) {
         try {
-          await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText || "Thinking...");
+          // Slice to avoid sending too much data if response is huge
+          const textToUpdate = fullText.length > 4000 ? fullText.substring(fullText.length - 4000) : fullText;
+          await ctx.api.editMessageText(ctx.chat.id, msg.message_id, textToUpdate || "Thinking...");
           lastUpdateAt = now;
-        } catch (_e) { /* ignore rate limit errors */ }
+        } catch (e: any) {
+          if (e.description?.includes("too many requests")) {
+            // If rate limited, back off significantly
+            lastUpdateAt = now + 2000;
+          }
+        }
       }
     }
 
