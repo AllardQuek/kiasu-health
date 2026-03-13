@@ -16,7 +16,9 @@ if (!process.env.TELEGRAM_BOT_TOKEN) {
 
 export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN ?? "placeholder", {
   client: {
-    timeout: 60000, // 60s timeout for TG API calls (editMessageText)
+    apiRoot: "https://api.telegram.org",
+    // @ts-ignore - grammy 1.x ApiClientOptions timeout property
+    timeout: 60000, 
   },
 });
 
