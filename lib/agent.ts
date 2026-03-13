@@ -103,7 +103,6 @@ export async function* streamAgentConversation(
         input: text,        // Changed from { input: { text } } to match sample
         agent_id: agentId,  // agent_id is now in the body, not the URL
         conversation_id: sessionId, // Use sessionId as conversation_id
-        stream: true,
       }),
     });
 
@@ -125,14 +124,41 @@ export async function* streamAgentConversation(
       const lines = chunk.split("\n");
 
       for (const line of lines) {
-        if (!line.trim() || !line.startsWith("data: ")) continue;
-        try {
-          const data = JSON.parse(line.slice(6));
-          // Elastic Agent Builder stream format: { delta: "..." } or { text: "..." }
-          if (data.delta) yield data.delta;
-          else if (data.text) yield data.text;
-        } catch (e) {
-          // Ignore parse errors for metadata/headers
+        const trimmedLine = line.trim();
+        if (!trimmedLine || line.startsWith(":")) continue;
+
+        if (line.startsWith("event: ")) {
+          currentEvent = line.slice(7).trim();
+          continue;
+        }
+
+        if (line.startsWith("data: ")) {
+          const dataStr = line.slice(6);
+          if (dataStr === "[DONE]") break;
+
+          try {
+            const parsed = JSON.parse(dataStr);
+            const eventData = parsed.data;
+            const eventType = currentEvent;
+
+            // Handle different event types based on actual API response
+            if ((eventType === "message_chunk" || eventType === "text" || eventType === "message") &&
+                (eventData?.text_chunk || eventData?.text || eventData?.chunk || eventData?.content)) {
+              yield eventData.text_chunk || eventData.text || eventData.chunk || eventData.content;
+            } else if (eventType === "reasoning" && (eventData?.reasoning || eventData?.thought)) {
+              // Ignore reasoning in the main output stream to keep Telegram clean
+            } else if (parsed.delta) {
+              yield parsed.delta;
+            } else if (parsed.text) {
+              yield parsed.text;
+            } else if (eventData?.delta) {
+              yield eventData.delta;
+            } else if (eventData?.text) {
+              yield eventData.text;
+            }
+          } catch (e) {
+            // Ignore parse errors for metadata/headers
+          }
         }
       }
     }
