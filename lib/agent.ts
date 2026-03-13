@@ -30,7 +30,7 @@ function getKibanaUrl(): string | undefined {
 
 async function invokeAgent(
   agentId: string | undefined,
-  agentLabel: "health_coach" | "referee",
+  agentLabel: "data-aggregator-agent" | "health_coach" | "referee",
   payload: AgentBuilderRequest
 ): Promise<AgentBuilderResponse> {
   const kibanaUrl = getKibanaUrl();
@@ -108,7 +108,7 @@ export async function* streamAgentConversation(
         agent_id: agentId,
         ...(validSessionId ? { conversation_id: validSessionId } : {}),
       }),
-      signal: AbortSignal.timeout(60000), // Increase timeout for longer agent processing
+      signal: AbortSignal.timeout(50000), // Shorten to catch before Vercel 60s limit
     });
 
     if (!res.ok) {
@@ -204,8 +204,8 @@ export async function callRefereeAgent(
 
 // ── Mock fallbacks ────────────────────────────────────────────────────────────
 
-function buildMockResponse(agentLabel: "health_coach" | "referee"): AgentBuilderResponse {
-  if (agentLabel === "health_coach") {
+function buildMockResponse(agentLabel: "data-aggregator-agent" | "health_coach" | "referee"): AgentBuilderResponse {
+  if (agentLabel === "health_coach" || agentLabel === "data-aggregator-agent") {
     return {
       ...MOCK_MEAL_RESULT,
       message:

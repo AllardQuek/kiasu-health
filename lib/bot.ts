@@ -203,19 +203,21 @@ bot.command("ask", async (ctx) => {
       fullText += delta;
       chunkCount++;
 
-      // Update every 20 chunks AND at least once every 1s to satisfy Telegram + Vercel
-      // Increased to 20 to reduce Telegram API calls and avoid potential congestion
+      // Update every 20 chunks AND at least once every 4s to satisfy Telegram + Vercel
+      // Increased interval further to avoid overhead
       const now = Date.now();
-      if (chunkCount % 20 === 0 || (now - lastUpdateAt > 2500 && delta.trim())) {
+      if (chunkCount % 20 === 0 || (now - lastUpdateAt > 4000 && delta.trim())) {
         try {
           // Slice to avoid sending too much data if response is huge
           const textToUpdate = fullText.length > 4000 ? fullText.substring(fullText.length - 4000) : fullText;
-          await ctx.api.editMessageText(ctx.chat.id, msg.message_id, textToUpdate || "Thinking...");
-          lastUpdateAt = now;
+          if (textToUpdate.trim()) {
+            await ctx.api.editMessageText(ctx.chat.id, msg.message_id, textToUpdate);
+            lastUpdateAt = now;
+          }
         } catch (e: any) {
           if (e.description?.includes("too many requests")) {
             // If rate limited, back off significantly
-            lastUpdateAt = now + 2000;
+            lastUpdateAt = now + 3000;
           }
         }
       }
