@@ -145,7 +145,7 @@ export const MOCK_CHICKEN_AGLIO_OLIO: MealPhotoResult = {
  * Enhanced Mock Bot Responses for DM /ask Queries
  * Organized by common query types (steps, activity, weight, nutrition)
  */
-export export const MOCK_ASK_RESPONSES = {
+export const MOCK_ASK_RESPONSES = {
   steps: 
     "Wah, you're doing steady lah! 🏃‍♂️ We are building a Healthier SG together.\n\n" +
     "*Your Trends (Past 7 Days):*\n" +
