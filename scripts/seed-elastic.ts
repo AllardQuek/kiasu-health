@@ -68,8 +68,8 @@ interface Persona {
 
 const PERSONAS: Persona[] = [
   {
-    // Ahmad — Most Improved badge. Weak prev weeks → strong current week (+40% steps).
-    player_id: "player1", name: "Ahmad", age: 35, gender: "M",
+    // Chris — Most Improved badge. Weak prev weeks → strong current week (+40% steps).
+    player_id: "player1", name: "Chris", age: 35, gender: "M",
     home_location: { lat: 1.365, lon: 103.820 }, total_wins: 1,
     steps_base: 10500, steps_variance: 0.14, weekend_boost: 1.05,
     step_week_mults: [1.00, 0.70, 0.73, 0.75],
@@ -78,8 +78,8 @@ const PERSONAS: Persona[] = [
     run_days: [1, 4], run_duration_range: [22, 32],
   },
   {
-    // Priya — Healthy Kaki badge. Best avg meal score. Age ×1.05 (age 42).
-    player_id: "player2", name: "Priya", age: 42, gender: "F",
+    // Komal — Healthy Kaki badge. Best avg meal score. Age ×1.05 (age 42).
+    player_id: "player2", name: "Komal", age: 42, gender: "F",
     home_location: { lat: 1.353, lon: 103.943 }, total_wins: 0,
     steps_base: 8500, steps_variance: 0.12, weekend_boost: 1.10,
     step_week_mults: [1.00, 0.95, 0.92, 0.90],
@@ -88,9 +88,9 @@ const PERSONAS: Persona[] = [
     run_days: [2, 5], run_duration_range: [18, 28],
   },
   {
-    // Wei Ming — Kiasu Champion. Highest overall score.
+    // Zing — Kiasu Champion. Highest overall score.
     // Steps + run = calibrated from Apple Health GPX (Yishun, ~4:30/km, ~27min sessions).
-    player_id: "player3", name: "Wei Ming", age: 28, gender: "M",
+    player_id: "player3", name: "Zing", age: 28, gender: "M",
     home_location: { lat: 1.422, lon: 103.827 }, total_wins: 2,
     steps_base: 9800, steps_variance: 0.12, weekend_boost: 1.08,
     step_week_mults: [1.00, 0.93, 0.89, 0.86],

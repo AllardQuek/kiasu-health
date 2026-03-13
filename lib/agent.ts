@@ -219,13 +219,13 @@ function buildMockResponse(agentLabel: "data-aggregator-agent" | "health_coach" 
   return {
     standings_text:
       "🏆 *Week 10 Reveal — League Challenge*\n\n" +
-      "#1 Wei Ming       77.4 pts  🏆 Kiasu Champion\n" +
-      "#2 Ahmad          74.5 pts  📈 Most Improved\n" +
-      "#3 Priya          65.4 pts  🥗 Healthy Kaki\n" +
+      "#1 Zing           77.4 pts  🏆 Kiasu Champion\n" +
+      "#2 Chris          74.5 pts  📈 Most Improved\n" +
+      "#3 Komal          65.4 pts  🥗 Healthy Kaki\n" +
       "#4 Siti           56.3 pts  🔥 Steady Lah\n\n" +
-      "🎁 Wei Ming wins free healthier kopi this week ☕\n\n" +
+      "🎁 Zing wins free healthier kopi this week ☕\n\n" +
       "Siti — steps were solid but meal balance dragged you down. Try lower-cal kopitiam options next week.",
-    winner_name: "Wei Ming",
+    winner_name: "Zing",
     nudge: "Your meal balance was weak this week. Try lower-cal kopitiam options next week.",
     reward: "Free healthier kopi for a week ☕",
   };

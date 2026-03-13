@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     console.error("[api/reveal] error:", err);
     return NextResponse.json({
       standings: MOCK_STANDINGS,
-      winner: { name: "Wei Ming", score: 77.4, badge: "Kiasu Champion 🏆" },
+      winner: { name: "Zing", score: 77.4, badge: "Kiasu Champion 🏆" },
       loser_nudge: "Siti — steps were solid but meal balance dragged you down.",
       reveal_message: buildRevealText(MOCK_STANDINGS),
       badges: MOCK_STANDINGS.map((s) => ({ player_id: s.player_id, badge: s.badge })),

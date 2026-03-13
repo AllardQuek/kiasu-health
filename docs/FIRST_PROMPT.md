@@ -88,7 +88,7 @@ Use field names that match the Elastic index mappings in `docs/ARCHITECTURE.md �
 
 ### `lib/mock.ts`
 
-4 seed players: Ahmad (35, league `sg-league-001`), Priya (42), Wei Ming (28), Siti (51). Include 7 days of mock `WeeklyMetric` records per player with step counts, meal scores, and activity flags. Export:
+4 seed players: Chris (35, league `sg-league-001`), Komal (42), Zing (28), Siti (51). Include 7 days of mock `WeeklyMetric` records per player with step counts, meal scores, and activity flags. Export:
 
 - `MOCK_STANDINGS: StandingsEntry[]` — pre-sorted by adjusted score, rank 1–4
 - `MOCK_MEAL_RESULT: MealPhotoResult` — example photo analysis response

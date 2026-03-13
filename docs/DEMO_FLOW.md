@@ -22,7 +22,7 @@ This demo highlights how **kiasu culture + small group accountability** leads to
     > "Eh, you want to know how your kakis are doing? 🧐
     >
     > *League Intelligence:* 
-    > • **Ahmad** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! 
+    > • **Chris** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! 
     > • **Siti** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.
     >
     > *Kiasu Tip:* If you clock a 20-min session... you'll **avoid the 'Treat All' penalty**! 🏆"
@@ -46,11 +46,11 @@ This demo highlights how **kiasu culture + small group accountability** leads to
 ## Phase 3: Actionable Nudges (The Heritage Trail)
 **Narrative**: The AI doesn't just judge; it gives you the specific "escape route" to avoid losing.
 
-*   **Prompt**: `/ask where can I walk to beat Ahmad?`
+*   **Prompt**: `/ask where can I walk to beat Chris?`
 *   **Key Demo Point**: Gamifying the physical environment. Turning a heritage trail into a "scoring zone."
 *   **Expected Response**:
     > "Wah, you're doing steady lah! 🏃‍♂️
-    > *Recommendation:* try the **AMK Heritage Trail** later... help you overtake Ahmad by tonight. Don't play play! 🔥"
+    > *Recommendation:* try the **AMK Heritage Trail** later... help you overtake Chris by tonight. Don't play play! 🔥"
 
 ---
 
@@ -61,7 +61,7 @@ This demo highlights how **kiasu culture + small group accountability** leads to
 *   **Key Demo Point**: Highlighting the "Stakes." The competition isn't for a trophy; it's to avoid the "Treat List."
 *   **Expected Response**:
     > "Look like you're near **Marina Bay**? 🌉
-    > 🔥 **Stakes:** If you finish it before sunset, you'll climb out of the 'Treat List' zone. If not, looks like you're **paying for Ahmad's lunch** next week! 🍱"
+    > 🔥 **Stakes:** If you finish it before sunset, you'll climb out of the 'Treat List' zone. If not, looks like you're **paying for Chris's lunch** next week! 🍱"
 
 ---
 
@@ -72,7 +72,7 @@ This demo highlights how **kiasu culture + small group accountability** leads to
 *   **Key Demo Point**: The Referee Agent acts as the objective judge, announcing the winner's "glory" and the loser's "nudge."
 *   **Expected Response**:
     > "🏆 *Week Reveal — sg-league-001*
-    > #1 **Wei Ming** — 77.4 pts Kiasu Champion 🏆
+    > #1 **Zing** — 77.4 pts Kiasu Champion 🏆
     > ...
     > 👀 *Full reveal*: [Web Link] (Cinematic reveal for the group)"
 

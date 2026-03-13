@@ -1,5 +1,5 @@
 // scripts/parse-apple-health.ts
-// Streams export.xml + Singapore GPX routes to extract Wei Ming's health baselines.
+// Streams export.xml + Singapore GPX routes to extract Zing's health baselines.
 // Output: JSON to stdout. Calibration summary to stderr.
 //
 // Usage:  npx tsx scripts/parse-apple-health.ts
@@ -127,7 +127,7 @@ async function main() {
   const distances = runs.map((r) => r.distance_km).sort((a, b) => a - b);
 
   const result = {
-    summary: "Wei Ming (player3) baseline — derived from Apple Health export",
+    summary: "Zing (player3) baseline — derived from Apple Health export",
     step_stats: {
       coverage_days: stepDays.length,
       avg: mean(stepDays), p25: pct(stepDays, 25), p50: pct(stepDays, 50),

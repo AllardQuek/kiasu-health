@@ -5,16 +5,16 @@
 import type { Player, WeeklyMetric, StandingsEntry, MealPhotoResult } from "./types";
 
 export const MOCK_PLAYERS: Player[] = [
-  { player_id: "player1", name: "Ahmad",    league_id: "sg-league-001", age: 35, gender: "M", home_location: { lat: 1.365, lon: 103.820 }, total_wins: 1 },
-  { player_id: "player2", name: "Priya",    league_id: "sg-league-001", age: 42, gender: "F", home_location: { lat: 1.353, lon: 103.943 }, total_wins: 0 },
-  { player_id: "player3", name: "Wei Ming", league_id: "sg-league-001", age: 28, gender: "M", home_location: { lat: 1.422, lon: 103.827 }, total_wins: 2 },
+  { player_id: "player1", name: "Chris",    league_id: "sg-league-001", age: 35, gender: "M", home_location: { lat: 1.365, lon: 103.820 }, total_wins: 1 },
+  { player_id: "player2", name: "Komal",    league_id: "sg-league-001", age: 42, gender: "F", home_location: { lat: 1.353, lon: 103.943 }, total_wins: 0 },
+  { player_id: "player3", name: "Zing",     league_id: "sg-league-001", age: 28, gender: "M", home_location: { lat: 1.422, lon: 103.827 }, total_wins: 2 },
   { player_id: "player4", name: "Siti",     league_id: "sg-league-001", age: 51, gender: "F", home_location: { lat: 1.345, lon: 103.740 }, total_wins: 0 },
 ];
 
 // 7-Day metrics (Mon 9 Mar – Sun 15 Mar 2026)
-// run_time_minutes: Ahmad 45, Priya 30, Wei Ming 60, Siti 20 (totals split across days)
+// run_time_minutes: Chris 45, Komal 30, Zing 60, Siti 20 (totals split across days)
 export const MOCK_METRICS: WeeklyMetric[] = [
-  // Ahmad (player1)
+  // Chris (player1)
   { player_id: "player1", league_id: "sg-league-001", date: "2026-03-09", steps: 11200, meal_balance_score: 7, run_time_minutes: 0,  source: "mock" },
   { player_id: "player1", league_id: "sg-league-001", date: "2026-03-10", steps: 9500,  meal_balance_score: 6, run_time_minutes: 15, source: "mock" },
   { player_id: "player1", league_id: "sg-league-001", date: "2026-03-11", steps: 10800, meal_balance_score: 8, run_time_minutes: 0,  source: "mock" },
@@ -23,7 +23,7 @@ export const MOCK_METRICS: WeeklyMetric[] = [
   { player_id: "player1", league_id: "sg-league-001", date: "2026-03-14", steps: 10300, meal_balance_score: 7, run_time_minutes: 0,  source: "mock" },
   { player_id: "player1", league_id: "sg-league-001", date: "2026-03-15", steps: 8700,  meal_balance_score: 6, run_time_minutes: 0,  source: "mock" },
 
-  // Priya (player2)
+  // Komal (player2)
   { player_id: "player2", league_id: "sg-league-001", date: "2026-03-09", steps: 8500,  meal_balance_score: 6, run_time_minutes: 0,  source: "mock" },
   { player_id: "player2", league_id: "sg-league-001", date: "2026-03-10", steps: 10200, meal_balance_score: 7, run_time_minutes: 10, source: "mock" },
   { player_id: "player2", league_id: "sg-league-001", date: "2026-03-11", steps: 9100,  meal_balance_score: 5, run_time_minutes: 0,  source: "mock" },
@@ -32,7 +32,7 @@ export const MOCK_METRICS: WeeklyMetric[] = [
   { player_id: "player2", league_id: "sg-league-001", date: "2026-03-14", steps: 9700,  meal_balance_score: 7, run_time_minutes: 0,  source: "mock" },
   { player_id: "player2", league_id: "sg-league-001", date: "2026-03-15", steps: 8200,  meal_balance_score: 5, run_time_minutes: 0,  source: "mock" },
 
-  // Wei Ming (player3)
+  // Zing (player3)
   { player_id: "player3", league_id: "sg-league-001", date: "2026-03-09", steps: 9800,  meal_balance_score: 8, run_time_minutes: 0,  source: "mock" },
   { player_id: "player3", league_id: "sg-league-001", date: "2026-03-10", steps: 8900,  meal_balance_score: 7, run_time_minutes: 20, source: "mock" },
   { player_id: "player3", league_id: "sg-league-001", date: "2026-03-11", steps: 11200, meal_balance_score: 9, run_time_minutes: 0,  source: "mock" },
@@ -57,7 +57,7 @@ export const MOCK_STANDINGS: StandingsEntry[] = [
   {
     rank: 1,
     player_id: "player3",
-    name: "Wei Ming",
+    name: "Zing",
     total_steps: 69200,
     avg_meal_balance: 7.43,
     total_run_mins: 60,
@@ -70,7 +70,7 @@ export const MOCK_STANDINGS: StandingsEntry[] = [
   {
     rank: 2,
     player_id: "player1",
-    name: "Ahmad",
+    name: "Chris",
     total_steps: 72500,
     avg_meal_balance: 7.14,
     total_run_mins: 45,
@@ -83,7 +83,7 @@ export const MOCK_STANDINGS: StandingsEntry[] = [
   {
     rank: 3,
     player_id: "player2",
-    name: "Priya",
+    name: "Komal",
     total_steps: 66000,
     avg_meal_balance: 6.29,
     total_run_mins: 30,
@@ -151,8 +151,8 @@ export const MOCK_ASK_RESPONSES = {
     "*Your Trends (Past 7 Days):*\n" +
     "• Average Steps: 10,245 (Up 15% from last week!)\n" +
     "• Most Active: Wednesday (14,200 steps at MacRitchie Treetop Walk)\n\n" +
-    "You're currently *Rank #2* in your league. Ahmad is only 5 points ahead of you! 🏆\n\n" +
-    "*Recommendation:* Since you're near Ang Mo Kio, why not try the *AMK Heritage Trail* later? It's a nice 4km loop that'll help you overtake Ahmad by tonight. Don't play play! 🔥",
+    "You're currently *Rank #2* in your league. Chris is only 5 points ahead of you! 🏆\n\n" +
+    "*Recommendation:* Since you're near Ang Mo Kio, why not try the *AMK Heritage Trail* later? It's a nice 4km loop that'll help you overtake Chris by tonight. Don't play play! 🔥",
     
   activity:
     "Strong effort this week! 🏸\n\n" +
@@ -173,16 +173,16 @@ export const MOCK_ASK_RESPONSES = {
   kakibash:
     "Eh, you want to know how your kakis are doing? 🧐\n\n" +
     "*League Intelligence:* \n" +
-    "• **Ahmad** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! \n" +
+    "• **Chris** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! \n" +
     "• **Siti** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.\n" +
-    "• **Wei Ming** is your biggest threat for the #1 spot this Sunday. He's been active for 5 days straight.\n\n" +
-    "*Kiasu Tip:* If you clock a 20-min session at the **ActiveSG Gym @ Jurong West** tonight, you'll earn enough bonus points to secure a 10-point lead over Wei Ming and **avoid the 'Treat All' penalty**! 🏆",
+    "• **Zing** is your biggest threat for the #1 spot this Sunday. He's been active for 5 days straight.\n\n" +
+    "*Kiasu Tip:* If you clock a 20-min session at the **ActiveSG Gym @ Jurong West** tonight, you'll earn enough bonus points to secure a 10-point lead over Zing and **avoid the 'Treat All' penalty**! 🏆",
 
   nearby:
     "Look like you're near **Marina Bay**? 🌉\n\n" +
     "Since your 'Activity' score is a bit low this week, why not try the **Waterfront Promenade**? \n\n" +
     "🚶‍♂️ **Challenge:** A full loop is ~3.5km (approx 4,500 steps). \n" +
-    "🔥 **Stakes:** If you finish it before sunset, you'll climb out of the 'Treat List' zone. If not, looks like you're **paying for Ahmad's lunch** next week! \n\n" +
+    "🔥 **Stakes:** If you finish it before sunset, you'll climb out of the 'Treat List' zone. If not, looks like you're **paying for Chris's lunch** next week! \n\n" +
     "Go walk-walk a bit lah, don't just sit in office! 🏢",
 
   default: 
