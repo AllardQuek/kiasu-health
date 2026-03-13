@@ -189,6 +189,7 @@ bot.command("ask", async (ctx) => {
 
   try {
     let fullText = "";
+    let lastTextSent = "🧠 Thinking...";
     // Note: Vercel serverless has a timeout (10-30s).
     // telegram.api.editMessageText allows us to "simulate" streaming by updating the message chunks.
     // However, fast updates can trigger Telegram rate limits.
@@ -204,33 +205,38 @@ bot.command("ask", async (ctx) => {
       chunkCount++;
 
       // Update every 20 chunks AND at least once every 4s to satisfy Telegram + Vercel
-      // Increased interval further to avoid overhead
       const now = Date.now();
-      if (chunkCount % 20 === 0 || (now - lastUpdateAt > 4000 && delta.trim())) {
-        try {
-          // Slice to avoid sending too much data if response is huge
-          const textToUpdate = fullText.length > 4000 ? fullText.substring(fullText.length - 4000) : fullText;
-          if (textToUpdate.trim()) {
+      if (chunkCount % 20 === 0 || (now - lastUpdateAt > 4000)) {
+        const textToUpdate = fullText.length > 4000 ? fullText.substring(fullText.length - 4000) : fullText;
+        if (textToUpdate.trim() && textToUpdate !== lastTextSent) {
+          try {
             await ctx.api.editMessageText(ctx.chat.id, msg.message_id, textToUpdate);
             lastUpdateAt = now;
-          }
-        } catch (e: any) {
-          if (e.description?.includes("too many requests")) {
-            // If rate limited, back off significantly
-            lastUpdateAt = now + 3000;
+            lastTextSent = textToUpdate;
+          } catch (e: any) {
+            if (e.description?.includes("message is not modified")) continue;
+            if (e.description?.includes("too many requests")) {
+              lastUpdateAt = now + 3000;
+            }
           }
         }
       }
     }
 
-    if (fullText) {
+    if (fullText && fullText !== lastTextSent) {
       await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText, { parse_mode: "Markdown" });
-    } else {
+    } else if (!fullText && lastTextSent === "🧠 Thinking...") {
       await ctx.api.editMessageText(ctx.chat.id, msg.message_id, "Alamak, the agent didn't say anything. Try asking again?");
     }
-  } catch (err) {
+  } catch (err: any) {
+    if (err.description?.includes("message is not modified")) return;
     console.error("[bot] /ask error:", err);
-    await ctx.api.editMessageText(ctx.chat.id, msg.message_id, "Sorry, I'm having trouble connecting to my health coach brain right now. 🫠");
+    try {
+      const errorMsg = "Sorry, I'm having trouble connecting to my health coach brain right now. 🫠";
+      if (lastTextSent !== errorMsg) {
+        await ctx.api.editMessageText(ctx.chat.id, msg.message_id, errorMsg);
+      }
+    } catch (e: any) {}
   }
 });
 

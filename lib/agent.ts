@@ -188,7 +188,7 @@ export async function* streamAgentConversation(
 export async function callHealthCoachAgent(
   payload: AgentBuilderRequest
 ): Promise<AgentBuilderResponse> {
-  return invokeAgent(process.env.HEALTH_COACH_AGENT_ID, "health_coach", payload);
+  return invokeAgent(process.env.HEALTH_COACH_AGENT_ID, "data-aggregator-agent", payload);
 }
 
 /**
