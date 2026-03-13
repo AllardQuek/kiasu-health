@@ -36,7 +36,7 @@ export async function getStandings(leagueId: string): Promise<StandingsEntry[]> 
     const esqlQuery = `
 FROM ${METRICS_INDEX}
 | WHERE league_id == "${leagueId}"
-  AND date >= DATE_TRUNC("week", NOW())
+  AND recorded_at >= DATE_TRUNC(1, "week", NOW())
 | STATS
     total_steps      = SUM(steps),
     avg_meal_balance = AVG(meal_balance_score),

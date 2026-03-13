@@ -198,15 +198,41 @@ bot.command("reveal", async (ctx) => {
   const leagueId = process.env.DEFAULT_LEAGUE_ID ?? "sg-league-001";
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "";
 
-  await ctx.reply("🔍 Tallying the scores...");
+  const msg = await ctx.reply("🔍 Tallying the scores and asking the Referee...");
 
-  // KiasuRefereeAgent: A2A → DataAggregatorAgent (all players) + get_league_standings
-  const result = await callRefereeAgent({ league_id: leagueId });
+  // Use the Referee Agent for the public reveal
+  const agentId = process.env.REFEREE_AGENT_ID;
+  const query = `Reveal the standings for league ${leagueId} and give a kiasu commentary.`;
 
-  const standingsText = result.standings_text ?? buildRevealFallback(leagueId);
-  const webLink = appUrl ? `\n\n👀 Full reveal: ${appUrl}/league/${leagueId}/reveal` : "";
+  try {
+    let fullText = "";
+    const stream = streamAgentConversation(agentId, query, `reveal_${leagueId}_${Date.now()}`);
+    let chunkCount = 0;
 
-  await ctx.reply(standingsText + webLink, { parse_mode: "Markdown" });
+    for await (const delta of stream) {
+      fullText += delta;
+      chunkCount++;
+      if (chunkCount % 10 === 0) {
+        try {
+          await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText || "Tallying...");
+        } catch (e) { /* ignore rate limits */ }
+      }
+    }
+
+    const webLink = appUrl ? `\n\n👀 *Full reveal*: ${appUrl}/league/${leagueId}/reveal` : "";
+
+    if (fullText) {
+      await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText + webLink, { parse_mode: "Markdown" });
+    } else {
+      // Fallback if agent fails
+      const result = await callRefereeAgent({ league_id: leagueId });
+      const standingsText = result.standings_text ?? buildRevealFallback(leagueId);
+      await ctx.api.editMessageText(ctx.chat.id, msg.message_id, standingsText + webLink, { parse_mode: "Markdown" });
+    }
+  } catch (err) {
+    console.error("[bot] /reveal error:", err);
+    await ctx.api.editMessageText(ctx.chat.id, msg.message_id, "Alamak, the Referee is on a lunch break. Try again later!");
+  }
 });
 
 function getRankEmoji(rank: number): string {
