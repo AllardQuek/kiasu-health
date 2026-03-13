@@ -64,12 +64,14 @@ export function LeaderboardCard({ entry, maxScore, isReveal = false }: Leaderboa
             {entry.age_adjusted && (
               <span
                 className={cn(
-                  "text-xs font-mono px-1.5 py-0.5 rounded",
-                  isReveal ? "bg-white/10 text-white/60" : "bg-warm-sand text-muted-teal"
+                  "text-[10px] font-mono px-1.5 py-0.5 rounded-full border tracking-tight",
+                  isReveal 
+                    ? "bg-white/10 text-white border-white/20" 
+                    : "bg-verdigris/10 text-verdigris border-verdigris/20"
                 )}
-                title="Age-adjusted score"
+                title={`Pioneer Bonus: ${entry.age_multiplier}x multiplier applied for ages 40+`}
               >
-                ×adj
+                {entry.age_multiplier}x Pioneer
               </span>
             )}
           </div>

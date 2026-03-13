@@ -92,6 +92,7 @@ export interface StandingsEntry {
   raw_score?: number;
   final_score: number;
   age_adjusted?: boolean;
+  age_multiplier?: number;
   badge?: string;
 }
 

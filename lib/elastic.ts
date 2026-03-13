@@ -100,6 +100,7 @@ FROM ${METRICS_INDEX}
         raw_score: rawScore,
         final_score: finalScore,
         age_adjusted: multiplier > 1,
+        age_multiplier: multiplier,
         badge: getBadge(i + 1),
       };
     });

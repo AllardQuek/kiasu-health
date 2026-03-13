@@ -1,91 +1,81 @@
 # KiasuHealth: Telegram Bot Demo Flow 🏆🇸🇬
 
-This is the recommended "Cinematic" demo script for the KiasuHealth Telegram bot. It highlights the core value props: **social pressure (Kiasu)**, **local SG integration**, and **personalized health coaching**.
+**Core Concept:** "Out-healthy your kakis, one week at a time."
+**Theme:** Accountability through gamification and friendly competition with small, relatable stakes (e.g., treating friends to coffee).
+
+This demo highlights how **kiasu culture + small group accountability** leads to sustained behavior change. It is not a solo tracker; it's a social game where the loser pays the "Kopi Tax."
 
 ---
 
 ## Preparation
-1. Ensure `.env.local` has `MOCK_RESPONSE=true` and `NEXT_PUBLIC_APP_URL` set.
-2. Join a league first using `/join KIASU01`.
+1. Ensure `.env.local` has `MOCK_RESPONSE=true`.
+2. Narrative Hook: "We all know 10,000 steps is good, but 10,000 steps so you don't have to buy lunch for the whole office on Monday? That's real motivation."
 
 ---
 
-## Phase 1: The "Kiasu" Check (Social Accountability)
-**Narrative**: You've just woken up and want to see if you can take it easy today. But your kakis are already active.
+## Phase 1: Social Accountability (The "Gossip" Check)
+**Narrative**: You've just woken up and want to slack off. But KiasuHealth's "Kaki Intelligence" keeps you honest.
 
 *   **Prompt**: `/ask how are my kakis doing?`
+*   **Key Demo Point**: Show how the AI "tattles" on friends. It's not just data; it's competitive intelligence.
 *   **Expected Response**:
     > "Eh, you want to know how your kakis are doing? 🧐
     >
     > *League Intelligence:* 
     > • **Ahmad** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! 
     > • **Siti** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.
-    > • **Wei Ming** is your biggest threat for the #1 spot...
     >
-    > *Kiasu Tip:* If you clock a 20-min session at the **ActiveSG Gym @ Jurong West** tonight, you'll earn enough bonus points... 🏆"
+    > *Kiasu Tip:* If you clock a 20-min session... you'll **avoid the 'Treat All' penalty**! 🏆"
 
 ---
 
-## Phase 2: Lunch Time (The Meal Analyzer)
-**Narrative**: You're at a Japanese eatery and want to see if your "healthy" choice actually counts.
+## Phase 2: Frictionless Logging (The Meal Score)
+**Narrative**: Accountability needs to be easy. Snap, score, and see how it affects your rank.
 
-*   **Action**: Upload a photo of **Mentaiko Salmon** (or any Japanese dish) with the caption `/photo`.
+*   **Action**: Upload a photo of **Mentaiko Salmon** with caption `/photo`.
+*   **Key Demo Point**: Note that raw photos aren't shared (privacy), but the **score** immediately updates the leaderboard.
 *   **Expected Response**:
     > "🔍 Analyzing your meal...
-    >
-    > I see a delicious Mentaiko Salmon dish! 🍣 The protein-to-veg ratio is solid thanks to those pickles and seaweed... A very balanced meal that keeps you in the Kiasu Champion race!
+    > I see a delicious Mentaiko Salmon dish! 🍣 ... A very balanced meal that keeps you in the Kiasu Champion race!
     >
     > **Nutritional Estimates:**
-    > 🥩 Protein: 32g
-    > 🍚 Carbs: 45g
-    > 🥑 Fat: 22g
-    > 🥬 Fiber: 4g"
+    > 🥩 Protein: 32g | 🥑 Fat: 22g..."
 
 ---
 
-## Phase 3: Stepping Up (Local Integration)
-**Narrative**: You realized Ahmad is still leading in steps. You need a place to walk that "counts" for the league.
+## Phase 3: Actionable Nudges (The Heritage Trail)
+**Narrative**: The AI doesn't just judge; it gives you the specific "escape route" to avoid losing.
 
 *   **Prompt**: `/ask where can I walk to beat Ahmad?`
+*   **Key Demo Point**: Gamifying the physical environment. Turning a heritage trail into a "scoring zone."
 *   **Expected Response**:
     > "Wah, you're doing steady lah! 🏃‍♂️
-    >
-    > *Your Trends (Past 7 Days):*
-    > • Average Steps: 10,245 (Up 15% from last week!)
-    >
-    > *Recommendation:* Since you're near Ang Mo Kio, why not try the **AMK Heritage Trail** later? It's a nice 4km loop that'll help you overtake Ahmad by tonight. Don't play play! 🔥"
+    > *Recommendation:* try the **AMK Heritage Trail** later... help you overtake Ahmad by tonight. Don't play play! 🔥"
 
 ---
 
-## Phase 4: Finding Nearby Challenges
-**Narrative**: You're in town and want a location-based challenge to earn extra badges.
+## Phase 4: High-Stakes Gamification (The Marina Bay Mission)
+**Narrative**: Putting a price on being a "straggler."
 
 *   **Prompt**: `/ask are there any parks near Marina Bay?`
+*   **Key Demo Point**: Highlighting the "Stakes." The competition isn't for a trophy; it's to avoid the "Treat List."
 *   **Expected Response**:
     > "Look like you're near **Marina Bay**? 🌉
-    >
-    > Since your 'Activity' score is a bit low this week, why not try the **Waterfront Promenade**? 
-    > 🚶‍♂️ **Challenge:** A full loop is ~3.5km (approx 4,500 steps). 
-    > 🎁 **Reward:** If you finish it before sunset, you'll unlock the *'Scenic Explorer'* badge...
-    >
-    > Go walk-walk a bit lah, don't just sit in office! 🏢"
+    > 🔥 **Stakes:** If you finish it before sunset, you'll climb out of the 'Treat List' zone. If not, looks like you're **paying for Ahmad's lunch** next week! 🍱"
 
 ---
 
-## Phase 5: The Grand Reveal (Group Chat)
-**Narrative**: Sunday arrives. You trigger the final standings in your Kakis group chat.
+## Phase 5: The Sunday Reveal (The Social "Shaming" & Glory)
+**Narrative**: The weekly climax. The group finds out who wins and who pays the Kopi Tax.
 
-*   **Action**: In a group chat (or mock it in DM), type `/reveal`.
+*   **Action**: In a group chat, type `/reveal`.
+*   **Key Demo Point**: The Referee Agent acts as the objective judge, announcing the winner's "glory" and the loser's "nudge."
 *   **Expected Response**:
-    > "🔍 Tallying the scores and asking the Referee...
-    >
-    > 🏆 *Week Reveal — sg-league-001*
+    > "🏆 *Week Reveal — sg-league-001*
     > #1 **Wei Ming** — 77.4 pts Kiasu Champion 🏆
-    > #2 **Ahmad** — 74.5 pts Most Improved 📈
     > ...
-    >
-    > 👀 *Full reveal*: https://your-app.vercel.app/league/sg-league-001/reveal"
+    > 👀 *Full reveal*: [Web Link] (Cinematic reveal for the group)"
 
 ---
 
-**Pro Tip**: Mention that the "Kiasu Voice" (The Singlish) is part of our **KiasuRefereeAgent's** persona, designed to maximize Singaporean engagement!
+**Closing Message:** "KiasuHealth turns health from a chore into a 'can't-miss' social appointment. Because in Singapore, peer pressure is the best medicine."

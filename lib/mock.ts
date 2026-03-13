@@ -157,18 +157,18 @@ export const MOCK_ASK_RESPONSES = {
   activity:
     "Strong effort this week! 🏸\n\n" +
     "You've clocked **145 active minutes**, mostly from your badminton session at *Tampines Hub* on Tuesday.\n\n" +
-    "Actually, you're only *30 mins away* from hitting your weekly intensity goal. If you hit the *Bedok Reservoir* for a quick jog tomorrow morning, you'll earn the 'Weekend Warrior' badge. Steady, can one! 🦾",
+    "Actually, you're only *30 mins away* from hitting your weekly intensity goal. If you hit the *Bedok Reservoir* for a quick jog tomorrow morning, you can ESCAPE the bottom rank. Remember: current last place has to **treat everyone Kopi and Kaya Toast** on Monday morning! Don't let it be you! ☕️🍞",
 
   weight:
     "Body weight is just one number, don't stress too much! ⚖️\n\n" +
     "I see your weight has stayed constant at 72kg, but your **step count and run volume are trending up**. This is good — focusing on the habits is how you win the long game.\n\n" +
-    "Remember: Siti (your league kaki) is 51 and still hitting 10k steps daily. If she can, you also can! Why not try a light swim at **Jurong East Swimming Complex** this weekend? 🏊‍♂️",
+    "Remember: Siti (your league kaki) is 51 and still hitting 10k steps daily. If she can, you also can! Why not try a light swim at **Jurong East Swimming Complex** this weekend? Focus on the fitness, and you won't have to **buy the winners lunch** next week! 🍱",
 
   nutrition:
     "Your meal balance is improving! 🥗\n\n" +
     "Average score: **6.8/10** (last week was 5.2/10).\n" +
     "I noticed you're eating more at *hawker centres* lately. Pro-tip: At the *Maxwell Food Centre*, look for the 'Healthier Choice' logo! \n\n" +
-    "Swap one 'Fried Kway Teow' for a 'Slicied Fish Soup' and you'll climb to Rank #1 for the nutrition category. Let's go! 🚀",
+    "Swap one 'Fried Kway Teow' for a 'Slicied Fish Soup' and you'll climb to Rank #1. Let's go! If you stay in the top 3, you **get a free Kopi** from the bottom-ranked straggler. Huat ah! 🚀",
 
   kakibash:
     "Eh, you want to know how your kakis are doing? 🧐\n\n" +
@@ -176,13 +176,13 @@ export const MOCK_ASK_RESPONSES = {
     "• **Ahmad** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! \n" +
     "• **Siti** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.\n" +
     "• **Wei Ming** is your biggest threat for the #1 spot this Sunday. He's been active for 5 days straight.\n\n" +
-    "*Kiasu Tip:* If you clock a 20-min session at the **ActiveSG Gym @ Jurong West** tonight, you'll earn enough bonus points to secure a 10-point lead over Wei Ming! 🏆",
+    "*Kiasu Tip:* If you clock a 20-min session at the **ActiveSG Gym @ Jurong West** tonight, you'll earn enough bonus points to secure a 10-point lead over Wei Ming and **avoid the 'Treat All' penalty**! 🏆",
 
   nearby:
     "Look like you're near **Marina Bay**? 🌉\n\n" +
     "Since your 'Activity' score is a bit low this week, why not try the **Waterfront Promenade**? \n\n" +
     "🚶‍♂️ **Challenge:** A full loop is ~3.5km (approx 4,500 steps). \n" +
-    "🎁 **Reward:** If you finish it before sunset, you'll unlock the *'Scenic Explorer'* badge in the league standings this Sunday!\n\n" +
+    "🔥 **Stakes:** If you finish it before sunset, you'll climb out of the 'Treat List' zone. If not, looks like you're **paying for Ahmad's lunch** next week! \n\n" +
     "Go walk-walk a bit lah, don't just sit in office! 🏢",
 
   default: 
