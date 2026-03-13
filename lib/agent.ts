@@ -116,6 +116,7 @@ export async function* streamAgentConversation(
     if (!reader) throw new Error("ReadableStream not supported");
 
     const decoder = new TextDecoder();
+    let currentEvent = "";
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
@@ -156,7 +157,7 @@ export async function* streamAgentConversation(
             } else if (eventData?.text) {
               yield eventData.text;
             }
-          } catch (e) {
+          } catch (_e) {
             // Ignore parse errors for metadata/headers
           }
         }

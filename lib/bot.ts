@@ -178,7 +178,7 @@ bot.command("ask", async (ctx) => {
       if (chunkCount % 10 === 0) {
         try {
           await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText || "Thinking...");
-        } catch (e) { /* ignore rate limit errors */ }
+        } catch (_e) { /* ignore rate limit errors */ }
       }
     }
 
@@ -215,7 +215,7 @@ bot.command("reveal", async (ctx) => {
       if (chunkCount % 10 === 0) {
         try {
           await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText || "Tallying...");
-        } catch (e) { /* ignore rate limits */ }
+        } catch (_e) { /* ignore rate limits */ }
       }
     }
 
