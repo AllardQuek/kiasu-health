@@ -107,7 +107,11 @@ export async function* streamAgentConversation(
       }),
     });
 
-    if (!res.ok) throw new Error(`Agent stream failed: ${res.status}`);
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error(`[agent] Stream failed (${res.status}):`, errorText);
+      throw new Error(`Agent stream failed: ${res.status}`);
+    }
 
     const reader = res.body?.getReader();
     if (!reader) throw new Error("ReadableStream not supported");
