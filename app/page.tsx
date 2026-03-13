@@ -6,9 +6,9 @@ import { Trophy, Users, ChevronRight, Footprints, Utensils } from "lucide-react"
 import { cn } from "@/lib/utils";
 
 const PREVIEW_STANDINGS = [
-  { rank: 1, name: "Nick",     score: 77.4, steps: 69200, meal: 7.4, badge: "Kiasu Champion", pct: 100 },
-  { rank: 2, name: "Chris",    score: 74.5, steps: 72500, meal: 7.1, badge: "Most Improved",  pct: 96  },
-  { rank: 3, name: "Komal",    score: 65.4, steps: 66000, meal: 6.3, badge: "Healthy Kaki",   pct: 84  },
+  { rank: 1, name: "Chris",    score: 82.5, steps: 72500, meal: 7.1, badge: "Kiasu Champion", pct: 100 },
+  { rank: 2, name: "Nick",     score: 77.4, steps: 69200, meal: 7.4, badge: "Most Improved",  pct: 94  },
+  { rank: 3, name: "Komal",    score: 65.4, steps: 66000, meal: 6.3, badge: "Healthy Kaki",   pct: 79  },
   { rank: 4, name: "Gaby",     score: 56.3, steps: 52600, meal: 4.0, badge: "Steady Lah",     pct: 68  },
 ];
 
