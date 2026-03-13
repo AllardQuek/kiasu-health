@@ -83,7 +83,7 @@ export async function* streamAgentConversation(
 
   if (!esUrl || !apiKey || !agentId) {
     console.warn(`[agent] Stream skipped: env missing (ELASTICSEARCH_URL=${!!esUrl}, API_KEY=${!!apiKey}, AGENT_ID=${!!agentId})`);
-    yield "Alamak, I'm missing some API keys or Agent IDs. Check your .env setup!";
+    yield "Aiyoh, Uncle Ong cannot find his glasses (API keys/Agent IDs). Check your .env setup lah!";
     return;
   }
 

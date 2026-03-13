@@ -114,11 +114,11 @@ export const MOCK_MEAL_RESULT: MealPhotoResult = {
   calories: 780,
   balance_score: 3,
   meal_balance_score: 3,
-  tip: "High sodium detected — swap skin-on chicken for soup to cut ~200 kcal and reduce sodium.",
+  tip: "Aiyoh, too oily lah! Swap that fried stuff for some soup or steamed fish. We want a Healthier SG, and that starts with your plate. Cutting ~200 calories is a win!",
   hawker_detected: true,
   calories_estimate: 780,
-  balance_tip: "Try economy rice with more vegetables next time.",
-  agent_commentary: "Looks like a typical kopitiam meal — not bad, but the fried options are dragging your balance score down.",
+  balance_tip: "Try economy rice but take 2 veg and 1 steamed meat. Less curry sauce, more success. Follow the Healthier Choice logos!",
+  agent_commentary: "Uncle Ong see your plate... wah, deep fried food again. We need to make sustainable changes for your long-term health. Don't let the calorie count 'chiong' too high!",
   league_score_entry: { meal_balance_score: 3 },
 };
 
@@ -133,11 +133,11 @@ export const MOCK_MENTAIKO_SALMON: MealPhotoResult = {
     fat: "22g",
     fiber: "4g"
   },
-  tip: "Excellent choice! The salmon provides Omega-3s, and the seaweed/pickles add micronutrients without many calories. Watch the mentaiko sauce portion to keep fats in check.",
+  tip: "Very good choice! Mentaiko high in fat but salmon is healthy oil. This is exactly what we mean by a balanced diet. Ask for less sauce next time, then even better. Keep it up!",
   hawker_detected: false,
   calories_estimate: 520,
-  balance_tip: "Swap white rice for brown rice next time for even better sustained energy.",
-  agent_commentary: "I see a delicious Mentaiko Salmon dish! 🍣 The protein-to-veg ratio is solid thanks to those pickles and seaweed. A very balanced meal that keeps you in the Kiasu Champion race!",
+  balance_tip: "Brown rice is your best friend for fiber. This is how we build a Healthier SG, one meal at a time!",
+  agent_commentary: "Wah, premium leh! 🍣 Uncle Ong approves this Mentaiko Salmon. Good balance, and plenty of protein. This is the Healthier Choice in action. You're leading by example!",
   league_score_entry: { meal_balance_score: 8 },
 };
 
@@ -147,46 +147,46 @@ export const MOCK_MENTAIKO_SALMON: MealPhotoResult = {
  */
 export const MOCK_ASK_RESPONSES = {
   steps: 
-    "Wah, you're doing steady lah! 🏃‍♂️\n\n" +
+    "Wah, you're doing steady lah! 🏃‍♂️ We are building a Healthier SG together.\n\n" +
     "*Your Trends (Past 7 Days):*\n" +
-    "• Average Steps: 10,245 (Up 15% from last week!)\n" +
-    "• Most Active: Wednesday (14,200 steps at MacRitchie Treetop Walk)\n\n" +
-    "You're currently *Rank #2* in your league. Chris is only 5 points ahead of you! 🏆\n\n" +
-    "*Recommendation:* Since you're near Ang Mo Kio, why not try the *AMK Heritage Trail* later? It's a nice 4km loop that'll help you overtake Chris by tonight. Don't play play! 🔥",
+    "• Average Steps: 10,245 (Up 15%! This is the kind of progress we need!)\n" +
+    "• Most Active: Wednesday (MacRitchie Treetop Walk - a great place for health!)\n\n" +
+    "You're currently *Rank #2*. Nick is only 5 points ahead. 🏆\n\n" +
+    "*Minister's Advice:* Why not take the *AMK Heritage Trail* later? It's good for the soul and the heart. Let's make every step count! 🔥",
     
   activity:
-    "Strong effort this week! 🏸\n\n" +
-    "You've clocked **145 active minutes**, mostly from your badminton session at *Tampines Hub* on Tuesday.\n\n" +
-    "Actually, you're only *30 mins away* from hitting your weekly intensity goal. If you hit the *Bedok Reservoir* for a quick jog tomorrow morning, you can ESCAPE the bottom rank. Remember: current last place has to **treat everyone Kopi and Kaya Toast** on Monday morning! Don't let it be you! ☕️🍞",
+    "Strong effort this week! 🏸 Uncle Ong is proud to see your commitment to an active lifestyle.\n\n" +
+    "You've clocked **145 active minutes**, mostly from your session at *Tampines Hub*.\n\n" +
+    "Listen ah, you're only *30 mins away* from hitting our national goal. Go to *Bedok Reservoir* tomorrow. Remember: our health is our responsibility. Don't be the one treating the kakis Kopi and Kaya Toast on Monday! ☕️🍞",
 
   weight:
-    "Body weight is just one number, don't stress too much! ⚖️\n\n" +
-    "I see your weight has stayed constant at 72kg, but your **step count and run volume are trending up**. This is good — focusing on the habits is how you win the long game.\n\n" +
-    "Remember: Gaby (your league kaki) is 51 and still hitting 10k steps daily. If she can, you also can! Why not try a light swim at **Jurong East Swimming Complex** this weekend? Focus on the fitness, and you won't have to **buy the winners lunch** next week! 🍱",
+    "Weight is just one indicator, focus on the overall health journey. ⚖️ Uncle also watching his health closely.\n\n" +
+    "Your weight is steady at 72kg, but your habits are improving. That's the key. \n\n" +
+    "Gaby is hit 10k steps daily at age 51. If she can lead a Healthier SG, you also can! Go for a swim at **Jurong East** this weekend? Focus on the fitness, and the results will follow! 🍱",
 
   nutrition:
-    "Your meal balance is improving! 🥗\n\n" +
-    "Average score: **6.8/10** (last week was 5.2/10).\n" +
-    "I noticed you're eating more at *hawker centres* lately. Pro-tip: At the *Maxwell Food Centre*, look for the 'Healthier Choice' logo! \n\n" +
-    "Swap one 'Fried Kway Teow' for a 'Slicied Fish Soup' and you'll climb to Rank #1. Let's go! If you stay in the top 3, you **get a free Kopi** from the bottom-ranked straggler. Huat ah! 🚀",
+    "Uncle Ong see your nutrition scores improving! 🥗 This is the foundation of a healthy life.\n\n" +
+    "Average score: **6.8/10**. \n" +
+    "When at hawker centres, look for the 'Healthier Choice' logo! Maxwell Food Centre has many good options. \n\n" +
+    "Swap 'Fried Kway Teow' for 'Sliced Fish Soup'. Your rank will rise, and your health will too. Huat ah! 🚀",
 
   kakibash:
-    "Eh, you want to know how your kakis are doing? 🧐\n\n" +
-    "*League Intelligence:* \n" +
-    "• **Chris** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! \n" +
-    "• **Gaby** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.\n" +
-    "• **Nick** is your biggest threat for the #1 spot this Sunday. He's been active for 5 days straight.\n\n" +
-    "*Kiasu Tip:* If you clock a 20-min session at the **ActiveSG Gym @ Jurong West** tonight, you'll earn enough bonus points to secure a 10-point lead over Nick and **avoid the 'Treat All' penalty**! 🏆",
+    "Eh, you want the progress report on your kakis? 🧐 Transparency helps everyone improve.\n\n" +
+    "*Uncle's Intelligence:* \n" +
+    "• **Chris** is 'Chionging' — he's leading the way for Healthier SG today! \n" +
+    "• **Gaby** with the economy rice (Score: 9/10). She's making very wise choices.\n" +
+    "• **Nick** is consistent. Consistency is how we transform our health.\n\n" +
+    "*Uncle's Pro-tip:* 20 mins at **ActiveSG Gym** tonight will secure your lead. Let's build healthy habits, not just temporary scores! 🏆",
 
   nearby:
-    "Look like you're near **Marina Bay**? 🌉\n\n" +
-    "Since your 'Activity' score is a bit low this week, why not try the **Waterfront Promenade**? \n\n" +
-    "🚶‍♂️ **Challenge:** A full loop is ~3.5km (approx 4,500 steps). \n" +
-    "🔥 **Stakes:** If you finish it before sunset, you'll climb out of the 'Treat List' zone. If not, looks like you're **paying for Chris's lunch** next week! \n\n" +
-    "Go walk-walk a bit lah, don't just sit in office! 🏢",
+    "Near **Marina Bay**? 🌉 It's a beautiful place for a Healthier SG walk.\n\n" +
+    "Your activity score needs a small boost. Go to the **Waterfront Promenade** now. \n\n" +
+    "🚶‍♂️ **Uncle's Challenge:** A full loop is ~3.5km. \n" +
+    "🔥 **The Stakes:** Finish it, and you're leading the charge for health. If not, don't complain when you have to buy Chris's lunch! \n\n" +
+    "Get moving for a Healthier SG! 🏢",
 
   default: 
-    "Steady lah! Everything is looking good. You're *Rank #2* and only a few points behind the leader. Just keep hitting your steps and logging those healthy meals. Kiasu spirit on! 🔥"
+    "Steady lah! We are making progress. You're *Rank #2* and leading the way for your kakis. Uncle Ong is with you. Healthier SG starts now! 🔥"
 };
 
 // Legacy for backward compatibility

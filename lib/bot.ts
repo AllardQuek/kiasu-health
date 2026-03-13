@@ -48,16 +48,16 @@ bot.use(async (ctx, next) => {
 // ── /start ──────────────────────────────────────────────────────────────
 bot.command("start", async (ctx) => {
   await ctx.reply(
-    `Eh, welcome to KiasuHealth lah! 🏆\n\n` +
-    `Compete with your kakis in weekly health challenges — steps, meals, activity.\n\n` +
-    `🔐 *Privacy*: Food photos stay between you and me. Only your *balance score* is shared with the league.\n\n` +
+    `Eh, hello! Uncle Ong here. 👴🏻🏆\n\n` +
+    `Welcome to KiasuHealth! I'm your health coach and referee. Let's make Healthier SG a reality for you and your kakis. Compete in weekly health challenges — steps, meals, activity.\n\n` +
+    `🔐 *Privacy*: Food photos stay between you and me. Even the Ministry won't see your oily Char Kway Teow! Only your *balance score* (out of 10) is shared with the league.\n\n` +
     `To join a league, ask your group admin for the join code, then:\n` +
     `/join <code> — Link your account to a league\n\n` +
     `Once joined:\n` +
     `/photo — Submit a meal photo + get coaching (DM only)\n` +
     `/ask — Query your health data and trends (DM only)\n` +
     `/reveal — Post this week's standings to the group (group chat)\n\n` +
-    `Need demo prompts? Type /help!`,
+    `Let's start our journey to a Healthier SG together! Type /help!`,
     { parse_mode: "Markdown" }
   );
 });
@@ -84,20 +84,20 @@ bot.command("help", async (ctx) => {
 bot.command("join", async (ctx) => {
   const joinCode = ctx.match?.trim().toUpperCase();
   if (!joinCode) {
-    await ctx.reply("Usage: /join <code> — e.g. /join KIASU01");
+    await ctx.reply("Usage check: /join KIASU01 lah! (Type it correctly okay?)");
     return;
   }
 
   const telegramId = ctx.from?.id?.toString();
   if (!telegramId) {
-    await ctx.reply("Could not identify your Telegram account. Try again.");
+    await ctx.reply("Who are you ah? Could not identify your Telegram account. Try again.");
     return;
   }
 
   try {
     const league = await getLeagueByJoinCode(joinCode);
     if (!league) {
-      await ctx.reply(`No league found for code *${joinCode}*. Double-check with your group admin.`, { parse_mode: "Markdown" });
+      await ctx.reply(`Alamak! No league found for code *${joinCode}*. Double-check with your group admin, don't anyhow join!`, { parse_mode: "Markdown" });
       return;
     }
 
@@ -105,7 +105,7 @@ bot.command("join", async (ctx) => {
     const existing = await getPlayerByTelegramId(telegramId);
     if (existing) {
       await ctx.reply(
-        `You're already in *${league.name}* lah! 🤝\n\nUse /photo to log a meal or /ask to query your trends.`,
+        `Kallang wave for you! 🌊 You're already in *${league.name}* lah! 🤝\n\nUse /photo to log a meal or /ask to query your trends.`,
         { parse_mode: "Markdown" }
       );
       return;
@@ -125,17 +125,17 @@ bot.command("join", async (ctx) => {
     });
 
     const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "";
-    const leagueLink = appUrl ? `\n\n📊 Live leaderboard: ${appUrl}/league/${league.league_id}` : "";
+    const leagueLink = appUrl ? `\n\n📊 Check the live leaderboard here: ${appUrl}/league/${league.league_id}` : "";
 
     await ctx.reply(
-      `You're in *${league.name}*! 🏆\n\n` +
-      `Start logging meals with /photo — I'll score your balance and coach you privately.\n` +
-      `Only your score (not your photo or calories) goes to the league.${leagueLink}`,
+      `Swee! You're in *${league.name}*! 🏆\n\n` +
+      `I'm Uncle Ong, your personal health coach. Start logging meals with /photo — I'll score your balance and coach you privately.\n` +
+      `Don't worry, only your score (not your photo or calories) goes to the league standings. ${leagueLink}`,
       { parse_mode: "Markdown" }
     );
   } catch (err) {
     console.error("[bot] /join error:", err);
-    await ctx.reply("Alamak, something went wrong. Try again in a moment.");
+    await ctx.reply("Alamak, something went wrong. Uncle's database is a bit slow today. Try again later!");
   }
 });
 
