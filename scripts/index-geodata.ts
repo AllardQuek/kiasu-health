@@ -126,7 +126,7 @@ async function bulkIndexFile(filePath: string) {
   if (exists) {
     let existingCount = -1;
     try {
-      const cnt = await client.count({ index: indexName } as any);
+      const cnt: any = await client.count({ index: indexName } as any);
       existingCount = typeof cnt?.body?.count === 'number' ? cnt.body.count : (cnt?.count ?? -1);
     } catch (e) {
       // ignore count errors
