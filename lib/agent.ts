@@ -88,8 +88,12 @@ export async function* streamAgentConversation(
   }
 
   const kibanaUrl = esUrl.replace(".es.", ".kb.");
-  // Endpoint updated based on user sample: /api/agent_builder/converse/async
   const url = `${kibanaUrl}/api/agent_builder/converse/async`;
+
+  // Filter out session IDs that look like placeholders or are known to cause 404s if they don't exist yet
+  const validSessionId = sessionId && !sessionId.startsWith("tg_") && !sessionId.startsWith("reveal_") 
+    ? sessionId 
+    : undefined;
 
   try {
     const res = await fetch(url, {
@@ -100,9 +104,9 @@ export async function* streamAgentConversation(
         "kbn-xsrf": "true",
       },
       body: JSON.stringify({
-        input: text,        // Changed from { input: { text } } to match sample
-        agent_id: agentId,  // agent_id is now in the body, not the URL
-        conversation_id: sessionId, // Use sessionId as conversation_id
+        input: text,
+        agent_id: agentId,
+        ...(validSessionId ? { conversation_id: validSessionId } : {}),
       }),
     });
 
@@ -141,6 +145,11 @@ export async function* streamAgentConversation(
             const parsed = JSON.parse(dataStr);
             const eventData = parsed.data;
             const eventType = currentEvent;
+
+            // Log session ID if provided by the agent for first time
+            if (eventType === "conversation_id_set" && eventData?.conversation_id) {
+              console.log(`[agent] New conversation created: ${eventData.conversation_id}`);
+            }
 
             // Handle different event types based on actual API response
             if ((eventType === "message_chunk" || eventType === "text" || eventType === "message") &&
