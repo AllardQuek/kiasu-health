@@ -14,7 +14,11 @@ if (!process.env.TELEGRAM_BOT_TOKEN) {
   console.warn("[bot] TELEGRAM_BOT_TOKEN not set — bot will be inoperative");
 }
 
-export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN ?? "placeholder");
+export const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN ?? "placeholder", {
+  client: {
+    timeout: 60000, // 60s timeout for TG API calls (editMessageText)
+  },
+});
 
 // ── /start ──────────────────────────────────────────────────────────────
 bot.command("start", async (ctx) => {

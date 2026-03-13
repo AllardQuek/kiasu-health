@@ -108,6 +108,7 @@ export async function* streamAgentConversation(
         agent_id: agentId,
         ...(validSessionId ? { conversation_id: validSessionId } : {}),
       }),
+      signal: AbortSignal.timeout(60000), // Increase timeout for longer agent processing
     });
 
     if (!res.ok) {
