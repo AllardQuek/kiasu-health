@@ -13,18 +13,29 @@ export async function POST(request: Request) {
     // This allows returning a 200 OK to Telegram immediately to prevent retries
     // while the bot/agent take 15+ seconds to process.
     if (process.env.VERCEL) {
+      console.log("[api/telegram] Running in Vercel, using waitUntil");
       waitUntil(
         (async () => {
           try {
+            console.log("[api/telegram] Starting background handleUpdate");
             await bot.handleUpdate(body);
+            console.log("[api/telegram] Finished background handleUpdate");
           } catch (err) {
-            console.error("Error handling update in background:", err);
+            console.error("[api/telegram] Error handling update in background:", err);
           }
         })()
       );
     } else {
       // Local development or non-Vercel environment
-      await bot.handleUpdate(body);
+      console.log("[api/telegram] Running locally, awaiting handleUpdate");
+      // Add a small safety timeout to ensure it doesn't hang forever locally
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 55000); 
+      try {
+        await bot.handleUpdate(body);
+      } finally {
+        clearTimeout(timeout);
+      }
     }
 
     // Explicitly set 200 OK for Telegram
