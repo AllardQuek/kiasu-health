@@ -88,7 +88,8 @@ export async function* streamAgentConversation(
   }
 
   const kibanaUrl = esUrl.replace(".es.", ".kb.");
-  const url = `${kibanaUrl}/api/agent_builder/agents/${agentId}/converse/async`;
+  // Endpoint updated based on user sample: /api/agent_builder/converse/async
+  const url = `${kibanaUrl}/api/agent_builder/converse/async`;
 
   try {
     const res = await fetch(url, {
@@ -99,8 +100,9 @@ export async function* streamAgentConversation(
         "kbn-xsrf": "true",
       },
       body: JSON.stringify({
-        input: { text },
-        session_id: sessionId,
+        input: text,        // Changed from { input: { text } } to match sample
+        agent_id: agentId,  // agent_id is now in the body, not the URL
+        conversation_id: sessionId, // Use sessionId as conversation_id
         stream: true,
       }),
     });
