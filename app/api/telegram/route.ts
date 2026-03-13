@@ -5,7 +5,9 @@ import { NextResponse } from "next/server";
 // Increase serverless function timeout (max 60s for hobby, 300s for pro)
 export const maxDuration = 60;
 
-const handleUpdate = webhookCallback(bot, "std/http");
+const handleUpdate = webhookCallback(bot, "std/http", {
+  timeoutMilliseconds: 60000,
+});
 
 export async function POST(request: Request) {
   try {
