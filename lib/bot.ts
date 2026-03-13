@@ -56,7 +56,26 @@ bot.command("start", async (ctx) => {
     `Once joined:\n` +
     `/photo — Submit a meal photo + get coaching (DM only)\n` +
     `/ask — Query your health data and trends (DM only)\n` +
-    `/reveal — Post this week's standings to the group (group chat)`,
+    `/reveal — Post this week's standings to the group (group chat)\n\n` +
+    `Need demo prompts? Type /help!`,
+    { parse_mode: "Markdown" }
+  );
+});
+
+// ── /help (Demo Prompts) ───────────────────────────────────────────────────
+bot.command("help", async (ctx) => {
+  await ctx.reply(
+    `🏆 *KiasuHealth Demo Prompts* 🏆\n\n` +
+    `*1. The "Gossip" Check (Private DM only)*\n` +
+    `\`/ask how are my kakis doing?\` — See competitive intelligence on your friends.\n\n` +
+    `*2. Meal Logging (Private DM only)*\n` +
+    `Upload a photo of your meal with caption: \`/photo\` — Get balance scores and coaching.\n\n` +
+    `*3. The "Escape Route" (Private DM only)*\n` +
+    `\`/ask where can I walk to beat Chris?\` — Personalized trail recommendations to win.\n\n` +
+    `*4. High-Stakes Mission (Private DM only)*\n` +
+    `\`/ask are there any parks near Marina Bay?\` — Avoid the "Kopi Tax" while you're out.\n\n` +
+    `*5. The Sunday Reveal (Group Chat only)*\n` +
+    `\`/reveal\` — Announce the weekly winner and the loser who's paying for coffee!`,
     { parse_mode: "Markdown" }
   );
 });
