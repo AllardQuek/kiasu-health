@@ -175,15 +175,18 @@ bot.command("ask", async (ctx) => {
 
     const stream = streamAgentConversation(agentId, query, `tg_${telegramId}`);
     let chunkCount = 0;
+    let lastUpdateAt = Date.now();
 
     for await (const delta of stream) {
       fullText += delta;
       chunkCount++;
 
-      // Update every 10 chunks to avoid hitting Telegram rate limits too hard
-      if (chunkCount % 10 === 0) {
+      // Update every 10 chunks AND at least once every 1s to satisfy Telegram + Vercel
+      const now = Date.now();
+      if (chunkCount % 10 === 0 || (now - lastUpdateAt > 1000 && delta.trim())) {
         try {
           await ctx.api.editMessageText(ctx.chat.id, msg.message_id, fullText || "Thinking...");
+          lastUpdateAt = now;
         } catch (_e) { /* ignore rate limit errors */ }
       }
     }
