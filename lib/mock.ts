@@ -121,3 +121,25 @@ export const MOCK_MEAL_RESULT: MealPhotoResult = {
   agent_commentary: "Looks like a typical kopitiam meal — not bad, but the fried options are dragging your balance score down.",
   league_score_entry: { meal_balance_score: 3 },
 };
+
+export const MOCK_MENTAIKO_SALMON: MealPhotoResult = {
+  player_id: "unknown",
+  calories: 520,
+  balance_score: 8,
+  meal_balance_score: 8,
+  tip: "Excellent choice! The salmon provides Omega-3s, and the seaweed/pickles add micronutrients without many calories. Watch the mentaiko sauce portion to keep fats in check.",
+  hawker_detected: false,
+  calories_estimate: 520,
+  balance_tip: "Swap white rice for brown rice next time for even better sustained energy.",
+  agent_commentary: "I see a delicious Mentaiko Salmon dish! 🍣 The protein-to-veg ratio is solid thanks to those pickles and seaweed. A very balanced meal that keeps you in the Kiasu Champion race!",
+  league_score_entry: { meal_balance_score: 8 },
+};
+
+export const MOCK_HEALTH_QUERY_RESPONSE = 
+  "Wah, you're doing steady lah! 🏃‍♂️\n\n" +
+  "*Your Trends (Past 7 Days):*\n" +
+  "• Average Steps: 10,245 (Up 15% from last week!)\n" +
+  "• Median Meal Score: 7.2/10 (Steady choice selection)\n" +
+  "• Active Minutes: 145 mins (Met your goal for 4/7 days)\n\n" +
+  "You're currently *Rank #2* in your league. Ahmad is only 5 points ahead of you! If you hit 12k steps tomorrow, you might just overtake him. 🏆\n\n" +
+  "Keep it up, don't play play! 🔥";

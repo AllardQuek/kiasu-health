@@ -8,7 +8,9 @@
 import { Bot } from "grammy";
 import { callHealthCoachAgent, callRefereeAgent, streamAgentConversation } from "./agent";
 import { getPlayerByTelegramId, upsertPlayer, getLeagueByJoinCode } from "./elastic";
-import { MOCK_STANDINGS } from "./mock";
+import { MOCK_STANDINGS, MOCK_MENTAIKO_SALMON, MOCK_HEALTH_QUERY_RESPONSE } from "./mock";
+
+const MOCK_MODE = process.env.MOCK_RESPONSE === "true";
 
 if (!process.env.TELEGRAM_BOT_TOKEN) {
   console.warn("[bot] TELEGRAM_BOT_TOKEN not set — bot will be inoperative");
@@ -135,6 +137,14 @@ bot.command("photo", async (ctx) => {
     return;
   }
 
+  if (MOCK_MODE) {
+    await ctx.reply("🔍 Analyzing your meal (Mock mode)...");
+    const result = MOCK_MENTAIKO_SALMON;
+    const reply = result.agent_commentary ?? `~${result.calories} kcal, *${result.balance_score}/10* for balance today.\n${result.tip}`;
+    await ctx.reply(reply, { parse_mode: "Markdown" });
+    return;
+  }
+
   const fileId = photo[photo.length - 1].file_id;
   const file = await ctx.api.getFile(fileId);
   // Telegram file URL — safe to pass to Bedrock for analysis; never stored in Elastic
@@ -176,6 +186,14 @@ bot.command("ask", async (ctx) => {
       "_Example: /ask am I on track for my step goal?_",
       { parse_mode: "Markdown" }
     );
+    return;
+  }
+
+  if (MOCK_MODE) {
+    await ctx.reply("🧠 Thinking (Mock mode)...");
+    setTimeout(async () => {
+      await ctx.reply(MOCK_HEALTH_QUERY_RESPONSE, { parse_mode: "Markdown" });
+    }, 1000);
     return;
   }
 
