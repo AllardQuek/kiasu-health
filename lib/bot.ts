@@ -184,12 +184,11 @@ bot.command("ask", async (ctx) => {
   // Use the HealthCoachAgent ID for general health queries (which leverages DataAggregatorAgent)
   const agentId = process.env.HEALTH_COACH_AGENT_ID;
 
-  // Placeholder message we will update or follow up on
   const msg = await ctx.reply("🧠 Thinking...");
+  let lastTextSent = "🧠 Thinking...";
 
   try {
     let fullText = "";
-    let lastTextSent = "🧠 Thinking...";
     // Note: Vercel serverless has a timeout (10-30s).
     // telegram.api.editMessageText allows us to "simulate" streaming by updating the message chunks.
     // However, fast updates can trigger Telegram rate limits.
