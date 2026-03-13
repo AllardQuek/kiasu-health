@@ -309,7 +309,7 @@ Calls Elastic ES|QL, returns ranked player list with scores and badges.
     {
       "rank": 1,
       "player_id": "player3",
-      "name": "Zing",
+      "name": "Nick",
       "total_steps": 9234,
       "avg_meal_balance": 7.5,
       "total_run_mins": 45,
@@ -389,8 +389,8 @@ Cache-first endpoint. Checks `kiasuhealth-reveals` for an existing record for th
 **Response:**
 ```json
 {
-  "standings_text": "🏆 Week 10 Reveal\n\n#1 Zing — 1,840 pts ...",
-  "winner_name": "Zing",
+  "standings_text": "🏆 Week 10 Reveal\n\n#1 Nick — 1,840 pts ...",
+  "winner_name": "Nick",
   "nudge": "Your meal balance was weak this week. Try lower-cal kopitiam options next week.",
   "reward": "Free healthier kopi for a week ☕",
   "cached": false
@@ -744,14 +744,14 @@ parameters:
 ```
 🏆 Week 10 Reveal — League Challenge
 
-#1 Zing           1,840 pts  🏆 Kiasu Champion
+#1 Nick           1,840 pts  🏆 Kiasu Champion
 #2 Chris          1,620 pts  📈 Most Improved
 #3 Komal          1,480 pts  🍱 Healthy Kaki
 #4 Gaby           1,210 pts  (age-adjusted ×1.1)
 
 Elastic Agent Builder referee — verified. No disputes accepted.
 
-🎉 Zing wins free healthier kopi this week ☕
+🎉 Nick wins free healthier kopi this week ☕
 
 Gaby — meal balance dragged you down. Your steps were solid. Next week: try lower-cal kopitiam options.
 ```
@@ -768,16 +768,16 @@ Pre-load this before the hackathon. 4 players × 7 days.
 [
   { "player_id": "player1", "name": "Chris",    "league_id": "sg-league-001", "age": 35, "gender": "M", "home_location": { "lat": 1.365, "lon": 103.820 }, "total_wins": 1 },
   { "player_id": "player2", "name": "Komal",    "league_id": "sg-league-001", "age": 42, "gender": "F", "home_location": { "lat": 1.353, "lon": 103.943 }, "total_wins": 0 },
-  { "player_id": "player3", "name": "Zing",     "league_id": "sg-league-001", "age": 28, "gender": "M", "home_location": { "lat": 1.422, "lon": 103.827 }, "total_wins": 2 },
+  { "player_id": "player3", "name": "Nick",     "league_id": "sg-league-001", "age": 28, "gender": "M", "home_location": { "lat": 1.422, "lon": 103.827 }, "total_wins": 2 },
   { "player_id": "player4", "name": "Gaby",     "league_id": "sg-league-001", "age": 51, "gender": "F", "home_location": { "lat": 1.345, "lon": 103.740 }, "total_wins": 0 }
 ]
 ```
 
-> `home_location` coordinates derived from neighbourhood centroids: Zing → Yishun (`[103.827, 1.422]`), Chris → Ang Mo Kio (`[103.820, 1.365]`), Komal → Tampines (`[103.943, 1.353]`), Gaby → Jurong West (`[103.740, 1.345]`). Zing's run metrics are calibrated against real Apple Health GPX data (Yishun area, ~4:30/km pace, ~5 km sessions).
+> `home_location` coordinates derived from neighbourhood centroids: Nick → Yishun (`[103.827, 1.422]`), Chris → Ang Mo Kio (`[103.820, 1.365]`), Komal → Tampines (`[103.943, 1.353]`), Gaby → Jurong West (`[103.740, 1.345]`). Nick's run metrics are calibrated against real Apple Health GPX data (Yishun area, ~4:30/km pace, ~5 km sessions).
 
 ### 7-Day Metrics (Mon 9 Mar – Sun 15 Mar 2026)
 
-| Date       | Chris steps | Chris meal | Komal steps | Komal meal | Zing steps | Zing meal | Gaby steps | Gaby meal |
+| Date       | Chris steps | Chris meal | Komal steps | Komal meal | Nick steps | Nick meal | Gaby steps | Gaby meal |
 |------------|-------------|------------|-----------|----------|-------------|------------|-------------|------------|
 | 2026-03-09 | 11,200      | 7          | 8,500     | 6        | 9,800       | 8          | 7,200       | 4          |
 | 2026-03-10 | 9,500       | 6          | 10,200    | 7        | 8,900       | 7          | 6,800       | 3          |
@@ -787,10 +787,10 @@ Pre-load this before the hackathon. 4 players × 7 days.
 | 2026-03-14 | 10,300      | 7          | 9,700     | 7        | 12,300      | 8          | 6,400       | 5          |
 | 2026-03-15 | 8,700       | 6          | 8,200     | 5        | 9,400       | 7          | 7,300       | 4          |
 
-> Run time (minutes) mock: Chris 45, Komal 30, Zing 60, Gaby 20
+> Run time (minutes) mock: Chris 45, Komal 30, Nick 60, Gaby 20
 
 Expected standings after ES|QL (approximate, before age adjustment):
-1. Zing — most consistent steps + high meal scores
+1. Nick — most consistent steps + high meal scores
 2. Chris — good steps, solid meal
 3. Komal — variable steps, solid meal
 4. Gaby — lowest meal scores; age multiplier (×1.1) brings her up slightly
@@ -972,12 +972,12 @@ Bot posts the standings directly to the group chat:
 ```
 🏆 Week 10 Standings — KiasuHealth League Challenge
 
-#1 Zing     1,840 pts 🏆 Kiasu Champion
+#1 Nick     1,840 pts 🏆 Kiasu Champion
 #2 Chris     1,620 pts 📈 Most Improved
 #3 Komal     1,480 pts 🍱 Healthy Kaki
 #4 Gaby      1,210 pts (age-adjusted ×1.1)
 
-🎉 Zing wins free healthier kopi this week ☕
+🎉 Nick wins free healthier kopi this week ☕
 Gaby — meal balance dragged you down. Next week: lighter kopitiam options!
 
 Full breakdown: https://kiasu-health.vercel.app/league/sg-league-001/reveal

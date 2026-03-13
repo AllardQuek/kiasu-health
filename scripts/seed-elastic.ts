@@ -88,9 +88,9 @@ const PERSONAS: Persona[] = [
     run_days: [2, 5], run_duration_range: [18, 28],
   },
   {
-    // Zing — Kiasu Champion. Highest overall score.
+    // Nick — Kiasu Champion. Highest overall score.
     // Steps + run = calibrated from Apple Health GPX (Yishun, ~4:30/km, ~27min sessions).
-    player_id: "player3", name: "Zing", age: 28, gender: "M",
+    player_id: "player3", name: "Nick", age: 28, gender: "M",
     home_location: { lat: 1.422, lon: 103.827 }, total_wins: 2,
     steps_base: 9800, steps_variance: 0.12, weekend_boost: 1.08,
     step_week_mults: [1.00, 0.93, 0.89, 0.86],

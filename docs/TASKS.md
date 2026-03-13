@@ -88,7 +88,7 @@
    npx tsx scripts/seed-elastic.ts
    ```
 2. Verify 4 players in `kiasuhealth-players`, each with a `home_location` geo_point and `total_wins` field:
-   - **Zing** (`player3`) → Yishun `[103.827, 1.422]` — run metrics calibrated from Apple Health GPX reference (~4:30/km, ~5 km sessions)
+   - **Nick** (`player3`) → Yishun `[103.827, 1.422]` — run metrics calibrated from Apple Health GPX reference (~4:30/km, ~5 km sessions)
    - **Chris** (`player1`) → Ang Mo Kio `[103.820, 1.365]`
    - **Komal** (`player2`) → Tampines `[103.943, 1.353]`
    - **Gaby** (`player4`) → Jurong West `[103.740, 1.345]`

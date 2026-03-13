@@ -72,7 +72,7 @@ This demo highlights how **kiasu culture + small group accountability** leads to
 *   **Key Demo Point**: The Referee Agent acts as the objective judge, announcing the winner's "glory" and the loser's "nudge."
 *   **Expected Response**:
     > "🏆 *Week Reveal — sg-league-001*
-    > #1 **Zing** — 77.4 pts Kiasu Champion 🏆
+    > #1 **Nick** — 77.4 pts Kiasu Champion 🏆
     > ...
     > 👀 *Full reveal*: [Web Link] (Cinematic reveal for the group)"
 

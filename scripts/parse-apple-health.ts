@@ -1,5 +1,5 @@
 // scripts/parse-apple-health.ts
-// Streams export.xml + Singapore GPX routes to extract Zing's health baselines.
+// Streams export.xml + Singapore GPX routes to extract Nick's health baselines.
 // Output: JSON to stdout. Calibration summary to stderr.
 //
 // Usage:  npx tsx scripts/parse-apple-health.ts

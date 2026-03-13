@@ -362,7 +362,7 @@ Daily check: metric trending down → RAG analysis → smart recommendation ("Yo
 ### Core Demo Flow (Simple Onboarding Focus)
 
 **Phase 1: Frictionless Join (30 seconds)**
-1. Judge 1 receives Telegram invite link
+1. Nick receives Telegram invite link
 2. Taps "Join Office Health Challenge"
 3. Connects Apple Health (or uses pre-loaded mock data)
 4. Sees initial score and position
