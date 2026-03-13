@@ -14,7 +14,7 @@ Copy and paste these prompts into Telegram during the demo.
 ---
 
 ### 2. Meal Logging (Vision AI)
-**Context**: Upload a meal photo (e.g., Mentaiko Salmon) with this caption to get a balance score.
+**Context**: Upload a meal photo (e.g., Cajun Power Chicken Aglio Olio) with this caption to get a balance score.
 **Caption**:
 ```text
 /photo

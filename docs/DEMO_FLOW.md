@@ -32,14 +32,14 @@ This demo highlights how **kiasu culture + small group accountability** leads to
 ## Phase 2: Frictionless Logging (The Meal Score)
 **Narrative**: Accountability needs to be easy. Snap, score, and see how it affects your rank.
 
-*   **Action**: Upload a photo of **Mentaiko Salmon** with caption `/photo`.
+*   **Action**: Upload a photo of **Cajun Power Chicken Aglio Olio** with caption `/photo`.
 *   **Key Demo Point**: Note that raw photos aren't shared (privacy), but the **score** immediately updates the leaderboard.
 *   **Expected Response**:
     > "🔍 Analyzing your meal...
-    > I see a delicious Mentaiko Salmon dish! 🍣 ... A very balanced meal that keeps you in the Kiasu Champion race!
+    > I see a delicious Cajun Power Chicken Aglio Olio! 🍝 ... A very balanced meal with lean protein and fresh cherry tomatoes that keeps you in the Kiasu Champion race!
     >
     > **Nutritional Estimates:**
-    > 🥩 Protein: 32g | 🥑 Fat: 22g..."
+    > 🥩 Protein: 28g | 🍝 Carbs: 55g..."
 
 ---
 

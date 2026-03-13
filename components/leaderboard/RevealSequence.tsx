@@ -132,7 +132,7 @@ export function RevealSequence({ standings, reward }: RevealSequenceProps) {
                 The Prize
               </div>
               <p className="text-xl font-sans font-bold text-verdigris leading-tight">
-                🏆 {reward || "Kakis buy you a Salmon Bowl lunch!"}
+                🏆 {reward || "Kakis buy you a Chicken Aglio Olio lunch!"}
               </p>
               <p className="text-[11px] font-sans text-white/40 mt-2 italic px-4">
                 Redeem this at tomorrow&apos;s lunch. No escape!

@@ -111,34 +111,34 @@ export const MOCK_STANDINGS: StandingsEntry[] = [
 // Example photo analysis response (returned by Agent Builder or as fallback)
 export const MOCK_MEAL_RESULT: MealPhotoResult = {
   player_id: "unknown",
-  calories: 780,
-  balance_score: 3,
-  meal_balance_score: 3,
-  tip: "Aiyoh, too oily lah! Swap that fried stuff for some soup or steamed fish. We want a Healthier SG, and that starts with your plate. Cutting ~200 calories is a win!",
-  hawker_detected: true,
-  calories_estimate: 780,
-  balance_tip: "Try economy rice but take 2 veg and 1 steamed meat. Less curry sauce, more success. Follow the Healthier Choice logos!",
-  agent_commentary: "Uncle Ong see your plate... wah, deep fried food again. We need to make sustainable changes for your long-term health. Don't let the calorie count 'chiong' too high!",
-  league_score_entry: { meal_balance_score: 3 },
+  calories: 620,
+  balance_score: 7,
+  meal_balance_score: 7,
+  tip: "Steady lah! Chicken Aglio Olio is a solid choice. The cajun chicken gives you good protein, and those cherry tomatoes add some needed vitamins. Next time, ask for 'less oil' (bo yew) to shave off another 100 calories. Keep it up!",
+  hawker_detected: false,
+  calories_estimate: 620,
+  balance_tip: "Try to swap some linguine for more vegetables next time. This is a great balanced meal for a Healthier SG journey!",
+  agent_commentary: "Uncle Ong see your plate... wah, 'Cajun Power' Chicken Aglio Olio! Very modern leh. Good balance of carbs and protein. This is a 'steady pom pi pi' choice for your health goal!",
+  league_score_entry: { meal_balance_score: 7 },
 };
 
-export const MOCK_MENTAIKO_SALMON: MealPhotoResult = {
+export const MOCK_CHICKEN_AGLIO_OLIO: MealPhotoResult = {
   player_id: "unknown",
-  calories: 520,
-  balance_score: 8,
-  meal_balance_score: 8,
+  calories: 620,
+  balance_score: 7,
+  meal_balance_score: 7,
   estimates: {
-    protein: "32g",
-    carbs: "45g",
-    fat: "22g",
-    fiber: "4g"
+    protein: "28g",
+    carbs: "55g",
+    fat: "24g",
+    fiber: "3g"
   },
-  tip: "Very good choice! Mentaiko high in fat but salmon is healthy oil. This is exactly what we mean by a balanced diet. Ask for less sauce next time, then even better. Keep it up!",
+  tip: "Steady lah! Chicken Aglio Olio is a solid choice. The cajun chicken gives you good protein, and those cherry tomatoes add some needed vitamins. Next time, ask for 'less oil' (bo yew) to shave off another 100 calories. Keep it up!",
   hawker_detected: false,
-  calories_estimate: 520,
-  balance_tip: "Brown rice is your best friend for fiber. This is how we build a Healthier SG, one meal at a time!",
-  agent_commentary: "Wah, premium leh! 🍣 Uncle Ong approves this Mentaiko Salmon. Good balance, and plenty of protein. This is the Healthier Choice in action. You're leading by example!",
-  league_score_entry: { meal_balance_score: 8 },
+  calories_estimate: 620,
+  balance_tip: "Try to swap some linguine for more vegetables next time. This is a great balanced meal for a Healthier SG journey!",
+  agent_commentary: "Uncle Ong see your plate... wah, 'Cajun Power' Chicken Aglio Olio! Very modern leh. Good balance of carbs and protein. This is a 'steady pom pi pi' choice for your health goal!",
+  league_score_entry: { meal_balance_score: 7 },
 };
 
 /**

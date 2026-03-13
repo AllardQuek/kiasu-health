@@ -8,7 +8,7 @@
 import { Bot } from "grammy";
 import { callHealthCoachAgent, callRefereeAgent, streamAgentConversation } from "./agent";
 import { getPlayerByTelegramId, upsertPlayer, getLeagueByJoinCode } from "./elastic";
-import { MOCK_STANDINGS, MOCK_MENTAIKO_SALMON, MOCK_ASK_RESPONSES } from "./mock";
+import { MOCK_STANDINGS, MOCK_CHICKEN_AGLIO_OLIO, MOCK_ASK_RESPONSES } from "./mock";
 
 const MOCK_MODE = process.env.MOCK_RESPONSE === "true";
 
@@ -159,7 +159,7 @@ const handlePhoto = async (ctx: any) => {
 
   if (MOCK_MODE) {
     await ctx.reply("🔍 Analyzing your meal...");
-    const result = MOCK_MENTAIKO_SALMON;
+    const result = MOCK_CHICKEN_AGLIO_OLIO;
     let reply = result.agent_commentary ?? `~${result.calories} kcal, *${result.balance_score}/10* for balance today.\n${result.tip}`;
     
     // Add detailed nutritional estimates if available
