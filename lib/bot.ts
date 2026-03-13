@@ -141,7 +141,18 @@ const handlePhoto = async (ctx: any) => {
   if (MOCK_MODE) {
     await ctx.reply("🔍 Analyzing your meal...");
     const result = MOCK_MENTAIKO_SALMON;
-    const reply = result.agent_commentary ?? `~${result.calories} kcal, *${result.balance_score}/10* for balance today.\n${result.tip}`;
+    let reply = result.agent_commentary ?? `~${result.calories} kcal, *${result.balance_score}/10* for balance today.\n${result.tip}`;
+    
+    // Add detailed nutritional estimates if available
+    if (result.estimates) {
+      const { protein, carbs, fat, fiber } = result.estimates;
+      reply += `\n\n*Nutritional Estimates:*\n` +
+               `🥩 Protein: ${protein ?? "-"}\n` +
+               `🍚 Carbs: ${carbs ?? "-"}\n` +
+               `🥑 Fat: ${fat ?? "-"}\n` +
+               `🥬 Fiber: ${fiber ?? "-"}`;
+    }
+
     await ctx.reply(reply, { parse_mode: "Markdown" });
     return;
   }
@@ -205,6 +216,8 @@ bot.command("ask", async (ctx) => {
     else if (lowerQuery.includes("active") || lowerQuery.includes("exercise") || lowerQuery.includes("activity")) mockResponse = MOCK_ASK_RESPONSES.activity;
     else if (lowerQuery.includes("weight") || lowerQuery.includes("fat") || lowerQuery.includes("bmi")) mockResponse = MOCK_ASK_RESPONSES.weight;
     else if (lowerQuery.includes("food") || lowerQuery.includes("meal") || lowerQuery.includes("eat") || lowerQuery.includes("nutrient")) mockResponse = MOCK_ASK_RESPONSES.nutrition;
+    else if (lowerQuery.includes("kaki") || lowerQuery.includes("friend") || lowerQuery.includes("standing") || lowerQuery.includes("rank") || lowerQuery.includes("leaderboard")) mockResponse = (MOCK_ASK_RESPONSES as any).kakibash;
+    else if (lowerQuery.includes("near") || lowerQuery.includes("where") || lowerQuery.includes("place") || lowerQuery.includes("park") || lowerQuery.includes("trail")) mockResponse = (MOCK_ASK_RESPONSES as any).nearby;
 
     await ctx.reply(mockResponse, { parse_mode: "Markdown" });
     return;

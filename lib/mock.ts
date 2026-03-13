@@ -127,6 +127,12 @@ export const MOCK_MENTAIKO_SALMON: MealPhotoResult = {
   calories: 520,
   balance_score: 8,
   meal_balance_score: 8,
+  estimates: {
+    protein: "32g",
+    carbs: "45g",
+    fat: "22g",
+    fiber: "4g"
+  },
   tip: "Excellent choice! The salmon provides Omega-3s, and the seaweed/pickles add micronutrients without many calories. Watch the mentaiko sauce portion to keep fats in check.",
   hawker_detected: false,
   calories_estimate: 520,
@@ -163,6 +169,21 @@ export const MOCK_ASK_RESPONSES = {
     "Average score: **6.8/10** (last week was 5.2/10).\n" +
     "I noticed you're eating more at *hawker centres* lately. Pro-tip: At the *Maxwell Food Centre*, look for the 'Healthier Choice' logo! \n\n" +
     "Swap one 'Fried Kway Teow' for a 'Slicied Fish Soup' and you'll climb to Rank #1 for the nutrition category. Let's go! 🚀",
+
+  kakibash:
+    "Eh, you want to know how your kakis are doing? 🧐\n\n" +
+    "*League Intelligence:* \n" +
+    "• **Ahmad** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! \n" +
+    "• **Siti** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.\n" +
+    "• **Wei Ming** is your biggest threat for the #1 spot this Sunday. He's been active for 5 days straight.\n\n" +
+    "*Kiasu Tip:* If you clock a 20-min session at the **ActiveSG Gym @ Jurong West** tonight, you'll earn enough bonus points to secure a 10-point lead over Wei Ming! 🏆",
+
+  nearby:
+    "Look like you're near **Marina Bay**? 🌉\n\n" +
+    "Since your 'Activity' score is a bit low this week, why not try the **Waterfront Promenade**? \n\n" +
+    "🚶‍♂️ **Challenge:** A full loop is ~3.5km (approx 4,500 steps). \n" +
+    "🎁 **Reward:** If you finish it before sunset, you'll unlock the *'Scenic Explorer'* badge in the league standings this Sunday!\n\n" +
+    "Go walk-walk a bit lah, don't just sit in office! 🏢",
 
   default: 
     "Steady lah! Everything is looking good. You're *Rank #2* and only a few points behind the leader. Just keep hitting your steps and logging those healthy meals. Kiasu spirit on! 🔥"

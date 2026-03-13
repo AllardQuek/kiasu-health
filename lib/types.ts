@@ -107,6 +107,12 @@ export interface MealPhotoResult {
   calories_estimate?: number;
   balance_tip?: string;
   agent_commentary?: string;
+  estimates?: {
+    protein?: string;
+    carbs?: string;
+    fat?: string;
+    fiber?: string;
+  };
 }
 
 export interface AgentBuilderRequest {
