@@ -8,7 +8,7 @@
 import { Bot } from "grammy";
 import { callHealthCoachAgent, callRefereeAgent, streamAgentConversation } from "./agent";
 import { getPlayerByTelegramId, upsertPlayer, getLeagueByJoinCode } from "./elastic";
-import { MOCK_STANDINGS, MOCK_MENTAIKO_SALMON, MOCK_HEALTH_QUERY_RESPONSE } from "./mock";
+import { MOCK_STANDINGS, MOCK_MENTAIKO_SALMON, MOCK_ASK_RESPONSES } from "./mock";
 
 const MOCK_MODE = process.env.MOCK_RESPONSE === "true";
 
@@ -138,7 +138,7 @@ bot.command("photo", async (ctx) => {
   }
 
   if (MOCK_MODE) {
-    await ctx.reply("🔍 Analyzing your meal (Mock mode)...");
+    await ctx.reply("🔍 Analyzing your meal...");
     const result = MOCK_MENTAIKO_SALMON;
     const reply = result.agent_commentary ?? `~${result.calories} kcal, *${result.balance_score}/10* for balance today.\n${result.tip}`;
     await ctx.reply(reply, { parse_mode: "Markdown" });
@@ -190,10 +190,15 @@ bot.command("ask", async (ctx) => {
   }
 
   if (MOCK_MODE) {
-    await ctx.reply("🧠 Thinking (Mock mode)...");
-    setTimeout(async () => {
-      await ctx.reply(MOCK_HEALTH_QUERY_RESPONSE, { parse_mode: "Markdown" });
-    }, 1000);
+    const lowerQuery = query.toLowerCase();
+    let mockResponse = MOCK_ASK_RESPONSES.default;
+    
+    if (lowerQuery.includes("step")) mockResponse = MOCK_ASK_RESPONSES.steps;
+    else if (lowerQuery.includes("active") || lowerQuery.includes("exercise") || lowerQuery.includes("activity")) mockResponse = MOCK_ASK_RESPONSES.activity;
+    else if (lowerQuery.includes("weight") || lowerQuery.includes("fat") || lowerQuery.includes("bmi")) mockResponse = MOCK_ASK_RESPONSES.weight;
+    else if (lowerQuery.includes("food") || lowerQuery.includes("meal") || lowerQuery.includes("eat") || lowerQuery.includes("nutrient")) mockResponse = MOCK_ASK_RESPONSES.nutrition;
+
+    await ctx.reply(mockResponse, { parse_mode: "Markdown" });
     return;
   }
 

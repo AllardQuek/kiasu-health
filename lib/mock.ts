@@ -135,11 +135,38 @@ export const MOCK_MENTAIKO_SALMON: MealPhotoResult = {
   league_score_entry: { meal_balance_score: 8 },
 };
 
-export const MOCK_HEALTH_QUERY_RESPONSE = 
-  "Wah, you're doing steady lah! 🏃‍♂️\n\n" +
-  "*Your Trends (Past 7 Days):*\n" +
-  "• Average Steps: 10,245 (Up 15% from last week!)\n" +
-  "• Median Meal Score: 7.2/10 (Steady choice selection)\n" +
-  "• Active Minutes: 145 mins (Met your goal for 4/7 days)\n\n" +
-  "You're currently *Rank #2* in your league. Ahmad is only 5 points ahead of you! If you hit 12k steps tomorrow, you might just overtake him. 🏆\n\n" +
-  "Keep it up, don't play play! 🔥";
+/**
+ * Enhanced Mock Bot Responses for DM /ask Queries
+ * Organized by common query types (steps, activity, weight, nutrition)
+ */
+export const MOCK_ASK_RESPONSES = {
+  steps: 
+    "Wah, you're doing steady lah! 🏃‍♂️\n\n" +
+    "*Your Trends (Past 7 Days):*\n" +
+    "• Average Steps: 10,245 (Up 15% from last week!)\n" +
+    "• Most Active: Wednesday (14,200 steps at MacRitchie Treetop Walk)\n\n" +
+    "You're currently *Rank #2* in your league. Ahmad is only 5 points ahead of you! 🏆\n\n" +
+    "*Recommendation:* Since you're near Ang Mo Kio, why not try the *AMK Heritage Trail* later? It's a nice 4km loop that'll help you overtake Ahmad by tonight. Don't play play! 🔥",
+    
+  activity:
+    "Strong effort this week! 🏸\n\n" +
+    "You've clocked **145 active minutes**, mostly from your badminton session at *Tampines Hub* on Tuesday.\n\n" +
+    "Actually, you're only *30 mins away* from hitting your weekly intensity goal. If you hit the *Bedok Reservoir* for a quick jog tomorrow morning, you'll earn the 'Weekend Warrior' badge. Steady, can one! 🦾",
+
+  weight:
+    "Body weight is just one number, don't stress too much! ⚖️\n\n" +
+    "I see your weight has stayed constant at 72kg, but your **step count and run volume are trending up**. This is good — focusing on the habits is how you win the long game.\n\n" +
+    "Remember: Siti (your league kaki) is 51 and still hitting 10k steps daily. If she can, you also can! Why not try a light swim at **Jurong East Swimming Complex** this weekend? 🏊‍♂️",
+
+  nutrition:
+    "Your meal balance is improving! 🥗\n\n" +
+    "Average score: **6.8/10** (last week was 5.2/10).\n" +
+    "I noticed you're eating more at *hawker centres* lately. Pro-tip: At the *Maxwell Food Centre*, look for the 'Healthier Choice' logo! \n\n" +
+    "Swap one 'Fried Kway Teow' for a 'Slicied Fish Soup' and you'll climb to Rank #1 for the nutrition category. Let's go! 🚀",
+
+  default: 
+    "Steady lah! Everything is looking good. You're *Rank #2* and only a few points behind the leader. Just keep hitting your steps and logging those healthy meals. Kiasu spirit on! 🔥"
+};
+
+// Legacy for backward compatibility
+export const MOCK_HEALTH_QUERY_RESPONSE = MOCK_ASK_RESPONSES.steps;
