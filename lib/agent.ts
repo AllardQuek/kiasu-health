@@ -222,9 +222,9 @@ function buildMockResponse(agentLabel: "data-aggregator-agent" | "health_coach" 
       "#1 Zing           77.4 pts  🏆 Kiasu Champion\n" +
       "#2 Chris          74.5 pts  📈 Most Improved\n" +
       "#3 Komal          65.4 pts  🥗 Healthy Kaki\n" +
-      "#4 Siti           56.3 pts  🔥 Steady Lah\n\n" +
+      "#4 Gaby           56.3 pts  🔥 Steady Lah\n\n" +
       "🎁 Zing wins free healthier kopi this week ☕\n\n" +
-      "Siti — steps were solid but meal balance dragged you down. Try lower-cal kopitiam options next week.",
+      "Gaby — steps were solid but meal balance dragged you down. Try lower-cal kopitiam options next week.",
     winner_name: "Zing",
     nudge: "Your meal balance was weak this week. Try lower-cal kopitiam options next week.",
     reward: "Free healthier kopi for a week ☕",

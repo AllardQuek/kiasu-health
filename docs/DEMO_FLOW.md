@@ -23,7 +23,7 @@ This demo highlights how **kiasu culture + small group accountability** leads to
     >
     > *League Intelligence:* 
     > • **Chris** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! 
-    > • **Siti** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.
+    > • **Gaby** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.
     >
     > *Kiasu Tip:* If you clock a 20-min session... you'll **avoid the 'Treat All' penalty**! 🏆"
 

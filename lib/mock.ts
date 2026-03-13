@@ -8,11 +8,11 @@ export const MOCK_PLAYERS: Player[] = [
   { player_id: "player1", name: "Chris",    league_id: "sg-league-001", age: 35, gender: "M", home_location: { lat: 1.365, lon: 103.820 }, total_wins: 1 },
   { player_id: "player2", name: "Komal",    league_id: "sg-league-001", age: 42, gender: "F", home_location: { lat: 1.353, lon: 103.943 }, total_wins: 0 },
   { player_id: "player3", name: "Zing",     league_id: "sg-league-001", age: 28, gender: "M", home_location: { lat: 1.422, lon: 103.827 }, total_wins: 2 },
-  { player_id: "player4", name: "Siti",     league_id: "sg-league-001", age: 51, gender: "F", home_location: { lat: 1.345, lon: 103.740 }, total_wins: 0 },
+  { player_id: "player4", name: "Gaby",     league_id: "sg-league-001", age: 51, gender: "F", home_location: { lat: 1.345, lon: 103.740 }, total_wins: 0 },
 ];
 
 // 7-Day metrics (Mon 9 Mar – Sun 15 Mar 2026)
-// run_time_minutes: Chris 45, Komal 30, Zing 60, Siti 20 (totals split across days)
+// run_time_minutes: Chris 45, Komal 30, Zing 60, Gaby 20 (totals split across days)
 export const MOCK_METRICS: WeeklyMetric[] = [
   // Chris (player1)
   { player_id: "player1", league_id: "sg-league-001", date: "2026-03-09", steps: 11200, meal_balance_score: 7, run_time_minutes: 0,  source: "mock" },
@@ -41,7 +41,7 @@ export const MOCK_METRICS: WeeklyMetric[] = [
   { player_id: "player3", league_id: "sg-league-001", date: "2026-03-14", steps: 12300, meal_balance_score: 8, run_time_minutes: 15, source: "mock" },
   { player_id: "player3", league_id: "sg-league-001", date: "2026-03-15", steps: 9400,  meal_balance_score: 7, run_time_minutes: 0,  source: "mock" },
 
-  // Siti (player4)
+  // Gaby (player4)
   { player_id: "player4", league_id: "sg-league-001", date: "2026-03-09", steps: 7200,  meal_balance_score: 4, run_time_minutes: 0,  source: "mock" },
   { player_id: "player4", league_id: "sg-league-001", date: "2026-03-10", steps: 6800,  meal_balance_score: 3, run_time_minutes: 10, source: "mock" },
   { player_id: "player4", league_id: "sg-league-001", date: "2026-03-11", steps: 8100,  meal_balance_score: 5, run_time_minutes: 0,  source: "mock" },
@@ -96,7 +96,7 @@ export const MOCK_STANDINGS: StandingsEntry[] = [
   {
     rank: 4,
     player_id: "player4",
-    name: "Siti",
+    name: "Gaby",
     total_steps: 52600,
     avg_meal_balance: 4.0,
     total_run_mins: 20,
@@ -162,7 +162,7 @@ export const MOCK_ASK_RESPONSES = {
   weight:
     "Body weight is just one number, don't stress too much! ⚖️\n\n" +
     "I see your weight has stayed constant at 72kg, but your **step count and run volume are trending up**. This is good — focusing on the habits is how you win the long game.\n\n" +
-    "Remember: Siti (your league kaki) is 51 and still hitting 10k steps daily. If she can, you also can! Why not try a light swim at **Jurong East Swimming Complex** this weekend? Focus on the fitness, and you won't have to **buy the winners lunch** next week! 🍱",
+    "Remember: Gaby (your league kaki) is 51 and still hitting 10k steps daily. If she can, you also can! Why not try a light swim at **Jurong East Swimming Complex** this weekend? Focus on the fitness, and you won't have to **buy the winners lunch** next week! 🍱",
 
   nutrition:
     "Your meal balance is improving! 🥗\n\n" +
@@ -174,7 +174,7 @@ export const MOCK_ASK_RESPONSES = {
     "Eh, you want to know how your kakis are doing? 🧐\n\n" +
     "*League Intelligence:* \n" +
     "• **Chris** is currently 'Chionging' — he hit 5,000 steps before 9am today. Level up leh! \n" +
-    "• **Siti** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.\n" +
+    "• **Gaby** had a solid economy rice lunch (Score: 9/10). She's catching up on your nutrition lead.\n" +
     "• **Zing** is your biggest threat for the #1 spot this Sunday. He's been active for 5 days straight.\n\n" +
     "*Kiasu Tip:* If you clock a 20-min session at the **ActiveSG Gym @ Jurong West** tonight, you'll earn enough bonus points to secure a 10-point lead over Zing and **avoid the 'Treat All' penalty**! 🏆",
 

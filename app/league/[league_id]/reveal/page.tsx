@@ -45,7 +45,7 @@ export default function RevealPage({ params }: RevealPageProps) {
         standings: MOCK_STANDINGS,
         winner: { name: "Zing", score: 77.4, badge: "Kiasu Champion 🏆" },
         reward: "Free healthier kopi for a week ☕",
-        loser_nudge: "Siti — steps were solid but meal balance dragged you down.",
+        loser_nudge: "Gaby — steps were solid but meal balance dragged you down.",
       });
     }
   }

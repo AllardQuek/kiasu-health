@@ -91,7 +91,7 @@
    - **Zing** (`player3`) → Yishun `[103.827, 1.422]` — run metrics calibrated from Apple Health GPX reference (~4:30/km, ~5 km sessions)
    - **Chris** (`player1`) → Ang Mo Kio `[103.820, 1.365]`
    - **Komal** (`player2`) → Tampines `[103.943, 1.353]`
-   - **Siti** (`player4`) → Jurong West `[103.740, 1.345]`
+   - **Gaby** (`player4`) → Jurong West `[103.740, 1.345]`
 3. Verify `join_code: "KIASU01"` is set on the league document in `kiasuhealth-leagues`
 4. Verify 28 metric records in `kiasuhealth-metrics`
 5. Run the ES|QL standings query manually in Kibana Dev Tools → expect 4 players ranked correctly
@@ -105,7 +105,7 @@
 Paste the standings query from ARCHITECTURE.md Section 2 into Kibana Dev Tools. Validate:
 - Returns all 4 players
 - `final_score` is computed correctly
-- Siti (age 51) shows age-adjusted score (×1.1)
+- Gaby (age 51) shows age-adjusted score (×1.1)
 - Sort order is correct (highest score first)
 
 Also test the two-week trends query used by `getPlayerTrends()` in `lib/elastic.ts`.
@@ -325,7 +325,7 @@ Run the full 2.5-minute demo flow from ARCHITECTURE.md Section 10:
 Verify:
 - `meal_balance_score` written to Elastic (not raw calories)
 - Standings include correct badges
-- Age adjustment applied (Siti gets ×1.1)
+- Age adjustment applied (Gaby gets ×1.1)
 - **Two** separate A2A traces visible in Kibana (HealthCoachAgent chain + KiasuRefereeAgent chain)
 - Second `/reveal` hits cache (`cached: true`) without calling Agent Builder again
 - `/photo` and `/ask` in a group chat are correctly rejected with privacy message

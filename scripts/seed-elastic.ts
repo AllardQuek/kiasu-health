@@ -99,8 +99,8 @@ const PERSONAS: Persona[] = [
     run_days: [0, 2, 5], run_duration_range: [22, 35],
   },
   {
-    // Siti — nudge target. Low meals; age ×1.1 (age 51).
-    player_id: "player4", name: "Siti", age: 51, gender: "F",
+    // Gaby — nudge target. Low meals; age ×1.1 (age 51).
+    player_id: "player4", name: "Gaby", age: 51, gender: "F",
     home_location: { lat: 1.345, lon: 103.740 }, total_wins: 0,
     steps_base: 6500, steps_variance: 0.15, weekend_boost: 1.00,
     step_week_mults: [1.00, 0.97, 1.03, 0.95],
