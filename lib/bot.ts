@@ -121,7 +121,8 @@ bot.command("join", async (ctx) => {
 });
 
 // ── /photo (DM only) ─────────────────────────────────────────────────────
-bot.command("photo", async (ctx) => {
+// Handle /photo command and also any photo sent with /photo as a caption
+const handlePhoto = async (ctx: any) => {
   if (ctx.chat?.type !== "private") {
     await ctx.reply("Eh, send your food photo in a private message to me lah 🤫");
     return;
@@ -170,6 +171,13 @@ bot.command("photo", async (ctx) => {
 
   await ctx.reply(reply, { parse_mode: "Markdown" });
   // balance_score is written to Elastic by HealthCoachAgent's write_meal_score tool (A2A)
+};
+
+bot.command("photo", handlePhoto);
+bot.on("message:photo", async (ctx) => {
+  if (ctx.message?.caption?.startsWith("/photo")) {
+    await handlePhoto(ctx);
+  }
 });
 
 // ── /ask (DM only) ──────────────────────────────────────────────────────────
