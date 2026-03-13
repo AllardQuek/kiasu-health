@@ -290,6 +290,13 @@ bot.command("reveal", async (ctx) => {
 
   const msg = await ctx.reply("🔍 Tallying the scores and asking the Referee...");
 
+  if (MOCK_MODE) {
+    const webLink = appUrl ? `\n\n👀 *Full reveal*: ${appUrl}/league/${leagueId}/reveal` : "";
+    const standingsText = buildRevealFallback(leagueId);
+    await ctx.api.editMessageText(ctx.chat.id, msg.message_id, standingsText + webLink, { parse_mode: "Markdown" });
+    return;
+  }
+
   // Use the Referee Agent for the public reveal
   const agentId = process.env.REFEREE_AGENT_ID;
   const query = `Reveal the standings for league ${leagueId} and give a kiasu commentary.`;
